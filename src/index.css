@@ -1,0 +1,394 @@
+@import "tailwindcss";
+
+/* Google Fonts must come after @import "tailwindcss" in v4 — loaded via <link> in index.html instead */
+
+/* ─── Tailwind v4 Custom Theme (matches the Stitch template config) ─── */
+@theme {
+  /* Colors from template tailwind.config */
+  --color-surface: #131313;
+  --color-surface-dim: #131313;
+  --color-surface-bright: #393939;
+  --color-surface-container: #1f1f1f;
+  --color-surface-container-low: #1b1b1b;
+  --color-surface-container-lowest: #0e0e0e;
+  --color-surface-container-high: #2a2a2a;
+  --color-surface-container-highest: #353535;
+  --color-surface-variant: #353535;
+  --color-on-surface: #e2e2e2;
+  --color-on-surface-variant: #c4c7c8;
+  --color-primary: #ffffff;
+  --color-on-primary: #2f3131;
+  --color-secondary: #c6c6cf;
+  --color-secondary-container: #45464e;
+  --color-on-secondary: #2f3037;
+  --color-outline: #8e9192;
+  --color-outline-variant: #444748;
+  --color-background: #131313;
+  --color-on-background: #e2e2e2;
+  --color-inverse-surface: #e2e2e2;
+  --color-inverse-on-surface: #303030;
+  --color-inverse-primary: #5d5f5f;
+  --color-error: #ffb4ab;
+  --color-error-container: #93000a;
+  --color-on-error: #690005;
+  --color-on-error-container: #ffdad6;
+
+  /* Font Families */
+  --font-family-display-hero: 'Playfair Display', serif;
+  --font-family-headline-lg: 'Playfair Display', serif;
+  --font-family-headline-lg-mobile: 'Playfair Display', serif;
+  --font-family-body-main: 'Geist', sans-serif;
+  --font-family-body-intro: 'Geist', sans-serif;
+  --font-family-label-mono: 'JetBrains Mono', monospace;
+
+  /* Font Size Tokens */
+  --font-size-display-hero: 84px;
+  --line-height-display-hero: 92px;
+  --letter-spacing-display-hero: -0.02em;
+
+  --font-size-headline-lg: 48px;
+  --line-height-headline-lg: 56px;
+
+  --font-size-headline-lg-mobile: 32px;
+  --line-height-headline-lg-mobile: 40px;
+
+  --font-size-body-intro: 20px;
+  --line-height-body-intro: 32px;
+
+  --font-size-body-main: 16px;
+  --line-height-body-main: 24px;
+
+  --font-size-label-mono: 12px;
+  --line-height-label-mono: 16px;
+  --letter-spacing-label-mono: 0.1em;
+
+  /* Spacing tokens */
+  --spacing-margin-desktop: 80px;
+  --spacing-margin-mobile: 24px;
+  --spacing-section-gap: 160px;
+  --spacing-gutter: 32px;
+
+  /* Border radius */
+  --radius-DEFAULT: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+}
+
+/* ─── Reset ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  color: #e2e2e2;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  font-family: 'Geist', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100dvh;
+  width: 100%;
+}
+
+/* ─── Typography Utility Classes (used in JSX pages) ─ */
+.font-display    { font-family: 'Playfair Display', serif; }
+.font-body       { font-family: 'Geist', sans-serif; }
+.font-mono       { font-family: 'JetBrains Mono', monospace; }
+
+/* ─── Tailwind semantic font utilities to match template names ─ */
+.font-display-hero      { font-family: 'Playfair Display', serif; }
+.font-headline-lg       { font-family: 'Playfair Display', serif; }
+.font-headline-lg-mobile { font-family: 'Playfair Display', serif; }
+.font-body-main         { font-family: 'Geist', sans-serif; }
+.font-body-intro        { font-family: 'Geist', sans-serif; }
+.font-label-mono        { font-family: 'JetBrains Mono', monospace; }
+
+.text-display-hero      { font-size: 84px; line-height: 92px; letter-spacing: -0.02em; font-weight: 700; }
+.text-headline-lg       { font-size: 48px; line-height: 56px; font-weight: 600; }
+.text-headline-lg-mobile { font-size: 32px; line-height: 40px; font-weight: 600; }
+.text-body-intro        { font-size: 20px; line-height: 32px; font-weight: 300; }
+.text-body-main         { font-size: 16px; line-height: 24px; font-weight: 400; }
+.text-label-mono        { font-size: 12px; line-height: 16px; letter-spacing: 0.1em; font-weight: 500; }
+
+/* Template spacing utilities */
+.px-margin-desktop { padding-left: 80px; padding-right: 80px; }
+.px-margin-mobile  { padding-left: 24px; padding-right: 24px; }
+.py-section-gap    { padding-top: 160px; padding-bottom: 160px; }
+
+/* ─── Material Symbols ───────────────────────────────── */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+  user-select: none;
+}
+
+/* ─── Glassmorphism ──────────────────────────────────── */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+}
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 1px 1px 0px 0px rgba(255,255,255,0.2), 0 20px 40px -10px rgba(0,0,0,0.5);
+  transform: translateY(-8px);
+}
+.glass-card img {
+  transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-card:hover img {
+  transform: scale(1.05);
+}
+
+/* ─── Watch image container hover ────────────────────── */
+.watch-img-container img {
+  transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.watch-img-container:hover img {
+  transform: scale(1.05);
+}
+
+/* ─── Ghost Button ───────────────────────────────────── */
+.ghost-btn {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  background: transparent;
+  color: #ffffff;
+}
+.ghost-btn:hover {
+  background: rgba(255, 255, 255, 0.9);
+  color: #000;
+}
+
+/* ─── Navbar ─────────────────────────────────────────── */
+#main-nav {
+  transition: background-color 0.4s cubic-bezier(0.4,0,0.2,1),
+              backdrop-filter 0.4s cubic-bezier(0.4,0,0.2,1),
+              border-color 0.4s cubic-bezier(0.4,0,0.2,1),
+              box-shadow 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+#main-nav.scrolled {
+  background-color: rgba(0,0,0,0.2);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-color: rgba(255,255,255,0.05);
+  box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+}
+#main-nav.nav-top {
+  background-color: transparent;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border-color: transparent;
+  box-shadow: none;
+}
+
+/* ─── Helpers ────────────────────────────────────────── */
+.glow-text { text-shadow: 0 0 20px rgba(255,255,255,0.3); }
+.fade-edge { mask-image: linear-gradient(to bottom, black 80%, transparent 100%); }
+.radial-fade { background: radial-gradient(circle at center, transparent 0%, #000000 100%); }
+.parallax-bg {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* ─── Scroll Reveal ──────────────────────────────────── */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s cubic-bezier(0.4,0,0.2,1), transform 1s cubic-bezier(0.4,0,0.2,1);
+}
+.reveal-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Particles ──────────────────────────────────────── */
+.particle {
+  position: absolute;
+  background: rgba(255,255,255,0.5);
+  border-radius: 50%;
+  filter: blur(2px);
+  pointer-events: none;
+}
+@keyframes float-particle-1 {
+  0%,100% { transform: translate(0,0) scale(1); opacity: 0.3; }
+  50%      { transform: translate(30px,-50px) scale(1.5); opacity: 0.8; }
+}
+@keyframes float-particle-2 {
+  0%,100% { transform: translate(0,0) scale(1); opacity: 0.2; }
+  50%      { transform: translate(-40px,-30px) scale(1.2); opacity: 0.6; }
+}
+@keyframes float-particle-3 {
+  0%,100% { transform: translate(0,0) scale(1); opacity: 0.4; }
+  50%      { transform: translate(20px,40px) scale(0.8); opacity: 0.9; }
+}
+
+/* ─── AI Voice Orb ───────────────────────────────────── */
+.orb-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.3);
+  animation: pulse-ring 4s infinite cubic-bezier(0.4,0,0.2,1);
+}
+@keyframes pulse-ring {
+  0%   { transform: scale(0.8); opacity: 0;   }
+  30%  { opacity: 0.6; }
+  100% { transform: scale(1.8); opacity: 0;   }
+}
+@keyframes orb-pulse-ring {
+  0%   { transform: scale(0.8); opacity: 0;   }
+  30%  { opacity: 0.6; }
+  100% { transform: scale(1.8); opacity: 0;   }
+}
+
+.orb-core {
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,0.4) 40%, rgba(255,255,255,0.05) 80%);
+  box-shadow: 0 0 50px 15px rgba(255,255,255,0.25), inset 0 0 20px rgba(255,255,255,0.8);
+  animation: breathe 5s infinite cubic-bezier(0.4,0,0.2,1);
+  position: relative;
+  border-radius: 50%;
+}
+.orb-core::after {
+  content: '';
+  position: absolute;
+  inset: -10px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, transparent 0%, rgba(255,255,255,0.3) 25%, transparent 50%, rgba(255,255,255,0.3) 75%, transparent 100%);
+  animation: spin-wave 8s linear infinite;
+  filter: blur(4px);
+  opacity: 0.7;
+}
+@keyframes breathe {
+  0%,100% { transform: scale(0.95); opacity: 0.7; filter: brightness(0.8); }
+  50%      { transform: scale(1.1);  opacity: 1;   filter: brightness(1.2); }
+}
+@keyframes orb-breathe {
+  0%,100% { transform: scale(0.95); opacity: 0.7; filter: brightness(0.8); }
+  50%      { transform: scale(1.1);  opacity: 1;   filter: brightness(1.2); }
+}
+@keyframes spin-wave {
+  0%   { transform: rotate(0deg)   scale(1);    }
+  50%  { transform: rotate(180deg) scale(1.05); }
+  100% { transform: rotate(360deg) scale(1);    }
+}
+@keyframes orb-spin-wave {
+  0%   { transform: rotate(0deg)   scale(1);    }
+  50%  { transform: rotate(180deg) scale(1.05); }
+  100% { transform: rotate(360deg) scale(1);    }
+}
+
+/* Listening state */
+.orb-core.listening {
+  animation: orb-listen 1.5s infinite cubic-bezier(0.4,0,0.2,1);
+  box-shadow: 0 0 60px 20px rgba(255,255,255,0.35), inset 0 0 30px rgba(255,255,255,0.9);
+}
+@keyframes orb-listen {
+  0%,100% { transform: scale(1);    filter: brightness(1);   }
+  50%      { transform: scale(1.15); filter: brightness(1.4); }
+}
+/* Thinking state */
+.orb-core.thinking {
+  animation: orb-think 2s infinite ease-in-out;
+  box-shadow: 0 0 40px 10px rgba(255,255,255,0.15);
+}
+@keyframes orb-think {
+  0%,100% { transform: scale(0.9); opacity: 0.6; }
+  50%      { transform: scale(1.0); opacity: 0.9; }
+}
+/* Speaking state */
+.orb-core.speaking {
+  animation: orb-speak 0.8s infinite cubic-bezier(0.4,0,0.2,1);
+  box-shadow: 0 0 70px 25px rgba(255,255,255,0.4), inset 0 0 30px rgba(255,255,255,1);
+}
+@keyframes orb-speak {
+  0%,100% { transform: scale(0.98); filter: brightness(1.1); }
+  50%      { transform: scale(1.08); filter: brightness(1.5); }
+}
+
+/* ─── Orb pulse helper (for inline uses) ─────────────── */
+.orb-pulse {
+  animation: orb-pulse-ring 4s infinite cubic-bezier(0.4,0,0.2,1);
+}
+
+/* ─── Waveform bars ───────────────────────────────────── */
+.waveform-bar {
+  width: 3px;
+  border-radius: 9999px;
+  background: rgba(255,255,255,0.8);
+  transform-origin: bottom;
+}
+@keyframes waveform-dance {
+  0%,100% { transform: scaleY(0.2); }
+  50%      { transform: scaleY(1);   }
+}
+
+/* ─── Fade-in animations ─────────────────────────────── */
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s cubic-bezier(0.4,0,0.2,1) forwards;
+}
+
+/* ─── Scrollbar ──────────────────────────────────────── */
+::-webkit-scrollbar       { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+
+/* ─── Error banner ───────────────────────────────────── */
+.error-banner {
+  position: fixed;
+  top: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(147,0,10,0.8);
+  border: 1px solid rgba(255,180,171,0.3);
+  backdrop-filter: blur(16px);
+  color: #ffdad6;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  max-width: 480px;
+  width: 90%;
+  z-index: 9999;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  animation: fade-in-up 0.3s ease forwards;
+}
+
+/* ─── Radial gradient background fade ───────────────── */
+.radial-gradient-fade-from-black {
+  background: radial-gradient(ellipse at center, transparent 0%, #000000 80%);
+}

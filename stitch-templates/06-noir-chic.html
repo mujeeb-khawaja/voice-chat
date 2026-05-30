@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Noir Chic - Timeless</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;family=Playfair+Display:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-error": "#690005",
+                        "on-error-container": "#ffdad6",
+                        "surface-bright": "#393939",
+                        "surface": "#131313",
+                        "on-tertiary-container": "#656467",
+                        "on-secondary": "#2f3037",
+                        "outline-variant": "#444748",
+                        "surface-container-low": "#1b1b1b",
+                        "on-primary": "#2f3131",
+                        "on-tertiary": "#303033",
+                        "secondary-fixed-dim": "#c6c6cf",
+                        "on-background": "#e2e2e2",
+                        "tertiary-container": "#e4e1e5",
+                        "surface-container-high": "#2a2a2a",
+                        "on-secondary-container": "#b4b4bd",
+                        "primary-fixed": "#e2e2e2",
+                        "on-secondary-fixed-variant": "#45464e",
+                        "surface-tint": "#c6c6c7",
+                        "background": "#131313",
+                        "on-tertiary-fixed": "#1b1b1e",
+                        "error-container": "#93000a",
+                        "tertiary-fixed": "#e4e1e5",
+                        "primary-fixed-dim": "#c6c6c7",
+                        "on-primary-fixed-variant": "#454747",
+                        "inverse-surface": "#e2e2e2",
+                        "error": "#ffb4ab",
+                        "secondary-container": "#45464e",
+                        "on-surface-variant": "#c4c7c8",
+                        "surface-variant": "#353535",
+                        "surface-dim": "#131313",
+                        "on-primary-container": "#636565",
+                        "surface-container-highest": "#353535",
+                        "primary-container": "#e2e2e2",
+                        "tertiary": "#ffffff",
+                        "primary": "#ffffff",
+                        "inverse-on-surface": "#303030",
+                        "inverse-primary": "#5d5f5f",
+                        "on-surface": "#e2e2e2",
+                        "secondary-fixed": "#e2e1eb",
+                        "on-secondary-fixed": "#1a1b22",
+                        "secondary": "#c6c6cf",
+                        "outline": "#8e9192",
+                        "surface-container": "#1f1f1f",
+                        "on-tertiary-fixed-variant": "#47464a",
+                        "tertiary-fixed-dim": "#c8c6c9",
+                        "on-primary-fixed": "#1a1c1c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "24px",
+                        "gutter": "32px",
+                        "section-gap": "160px",
+                        "margin-desktop": "80px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "body-intro": ["Geist"],
+                        "body-main": ["Geist"],
+                        "label-mono": ["JetBrains Mono"],
+                        "headline-lg": ["Playfair Display"],
+                        "display-hero": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-intro": ["20px", { "lineHeight": "32px", "fontWeight": "300" }],
+                        "body-main": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-mono": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "fontWeight": "600" }],
+                        "display-hero": ["84px", { "lineHeight": "92px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Custom Keyframes for Atmospheric Motion */
+        @keyframes subtle-breathe {
+            0%, 100% { opacity: 0.8; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+        @keyframes orb-pulse {
+            0%, 100% { box-shadow: 0 0 10px rgba(255,255,255,0.2), 0 0 20px rgba(255,255,255,0.1); }
+            50% { box-shadow: 0 0 20px rgba(255,255,255,0.5), 0 0 40px rgba(255,255,255,0.2); }
+        }
+        .animate-breathe { animation: subtle-breathe 8s ease-in-out infinite; }
+        .animate-orb { animation: orb-pulse 4s ease-in-out infinite; }
+        
+        /* Glassmorphism Utilities to supplement Tailwind config */
+        .glass-panel {
+            background-color: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.05); /* Soft inner edge glow */
+        }
+        
+        /* Hide scrollbar for clean aesthetic */
+        ::-webkit-scrollbar { width: 0px; background: transparent; }
+    </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface overflow-x-hidden antialiased font-body-main text-body-main selection:bg-primary selection:text-surface-container-lowest">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-white/8 backdrop-blur-[24px] border-b border-white/10 shadow-none text-primary dark:text-tertiary font-body-main text-body-main">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 w-full">
+<div class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary tracking-tighter">
+                Timeless
+            </div>
+<nav class="hidden md:flex items-center gap-gutter">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Men</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Women</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Kids</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 Active: scale-95 transition-transform" href="#">Collections</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">About</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors duration-300 group">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">settings_voice</span>
+</button>
+</div>
+</div>
+</header>
+<!-- SideNavBar (AI Voice Concierge) - Desktop Only for this layout priority -->
+<aside class="hidden md:flex fixed right-0 h-screen w-24 z-40 bg-white/5 backdrop-blur-[20px] border-l border-white/10 shadow-2xl text-tertiary font-label-mono text-label-mono flex-col items-center justify-center space-y-8">
+<!-- The Orb Component -->
+<div class="absolute top-32 flex flex-col items-center gap-4 group cursor-pointer" title="AI Voice Concierge Orb">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest border border-white/20 flex items-center justify-center animate-orb transition-all duration-500 group-hover:bg-white/10">
+<div class="w-8 h-8 rounded-full bg-gradient-to-tr from-surface-variant to-white/30 blur-[2px]"></div>
+</div>
+<div class="flex flex-col items-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute top-16 w-32 right-full mr-4 glass-panel p-4 rounded-lg pointer-events-none">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-white text-[16px] leading-tight">The Orb</span>
+<span class="text-on-surface-variant text-[10px] uppercase tracking-widest mt-1">Listening...</span>
+</div>
+</div>
+<!-- Navigation Icons -->
+<div class="flex flex-col gap-6 mt-24">
+<button class="text-primary bg-white/15 rounded-full p-4 hover:bg-white/10 transition-all flex items-center justify-center relative group">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">graphic_eq</span>
+<span class="absolute right-full mr-4 bg-surface-container px-3 py-1 rounded text-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">Concierge</span>
+</button>
+<button class="text-on-surface-variant p-4 hover:bg-white/10 transition-all rounded-full flex items-center justify-center relative group">
+<span class="material-symbols-outlined">watch</span>
+<span class="absolute right-full mr-4 bg-surface-container px-3 py-1 rounded text-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">Portfolio</span>
+</button>
+<button class="text-on-surface-variant p-4 hover:bg-white/10 transition-all rounded-full flex items-center justify-center relative group">
+<span class="material-symbols-outlined">history</span>
+<span class="absolute right-full mr-4 bg-surface-container px-3 py-1 rounded text-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">Heritage</span>
+</button>
+<button class="text-on-surface-variant p-4 hover:bg-white/10 transition-all rounded-full flex items-center justify-center relative group">
+<span class="material-symbols-outlined">support_agent</span>
+<span class="absolute right-full mr-4 bg-surface-container px-3 py-1 rounded text-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">Assistance</span>
+</button>
+</div>
+<div class="absolute bottom-12 rotate-[-90deg] origin-center whitespace-nowrap opacity-50 tracking-widest">
+            SPEAK NOW
+        </div>
+</aside>
+<!-- Main Content Canvas (Offset for Side Nav on Desktop) -->
+<main class="md:pr-24 relative">
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center pt-24 px-margin-mobile md:px-margin-desktop overflow-hidden">
+<!-- Atmospheric Background Gradient -->
+<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-surface-variant/20 via-surface-container-lowest to-surface-container-lowest z-0"></div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter w-full relative z-10 items-center">
+<!-- Typography Offset -->
+<div class="md:col-span-5 md:col-start-2 flex flex-col gap-6 z-20 mix-blend-difference">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-display-hero md:text-display-hero text-primary uppercase tracking-tighter">
+                        Noir<br/>Chic
+                    </h1>
+<p class="font-body-intro text-body-intro text-on-surface-variant max-w-md">
+                        A masterclass in monochromatic depth. Forged from aerospace-grade matte ceramic, revealing layers of darkness.
+                    </p>
+<div class="mt-8 flex items-center gap-6">
+<button class="px-8 py-4 border border-white/20 text-white hover:bg-white hover:text-black transition-all duration-500 font-label-mono text-label-mono uppercase tracking-widest bg-white/5 backdrop-blur-md">
+                            Acquire
+                        </button>
+<span class="font-label-mono text-label-mono text-on-surface-variant">$14,500</span>
+</div>
+</div>
+<!-- Hero Imagery -->
+<div class="md:col-span-7 relative h-[614px] md:h-[819px] flex items-center justify-center animate-breathe mt-12 md:mt-0">
+<img alt="Noir Chic Watch Face" class="object-contain h-full w-full drop-shadow-[0_0_40px_rgba(255,255,255,0.05)] scale-100 hover:scale-105 transition-transform duration-1000 ease-out" data-alt="A macro, ultra-high-resolution studio photograph of a luxury mechanical watch face completely rendered in various shades of black and charcoal. The lighting is cinematic and moody, highlighting the varied textures of matte ceramic, polished onyx hands, and a subtle carbon fiber dial pattern against a pure black background. The aesthetic is extremely minimalist, high-fashion, and dark mode oriented." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDauyQsFwf6PxM7DOi0U6mBRRY2ZW-mKqwevLOr5d7Z2vN-qCmbekAmYgC0smcIG_mmu-sOzK6lK9Qa0RElkXLLIDW1dUFlesbs-bj7-xfewMWFjF0qw4oCaihkp3hTi_d0m-QHrVdppuo4CGmZEEcJm30qEf4DYF3xs9xXIkONcM93qUfI9xCFQLkS1sPprVKNfvjJ3y6kQpJ95TUWU4moUaSn9dftIUw-HNLdmAKrtdIzdadWLmaMGqlkLAN-Oon6ormCLEN6SWIZ"/>
+</div>
+</div>
+</section>
+<!-- Technical Specification Bento Grid -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop relative">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter auto-rows-[minmax(180px,auto)]">
+<!-- Section Title -->
+<div class="col-span-1 md:col-span-12 mb-12">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary">The Architecture of Night</h2>
+<div class="w-24 h-px bg-white/20 mt-6"></div>
+</div>
+<!-- Large Image Card -->
+<div class="col-span-1 md:col-span-8 row-span-2 glass-card rounded-xl overflow-hidden relative group">
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors duration-700 z-10"></div>
+<img alt="Movement Detail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" data-alt="An extremely close-up, abstract macro shot of the internal mechanical movement of a luxury timepiece. The gears and springs are coated in a dark, ruthenium or PVD black finish, contrasting with tiny, precise ruby bearings. The depth of field is incredibly shallow, creating a sense of technical mystery and precision engineering within a dark, premium environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDV6Iv62mWIrIl3pquBFgsgQ5qtSsNv4UnxChEc3-Y_WWQzT7E14uBdm5zN-xY37JpQmiDuEUj09tnrcQ0iJ3litD_SHuALQOx1dlrHZqABuUvdRAXQgFn9WlfwouPtZpsUiVgCY-fXN3HT1HaOcnYNHGhKtDMnP1DuG5qF16cdvULLa-KennuOxnKuPu4DPzcU_YBcFevh1qzbpMAyLsIOpRvG8GUEyQwqcA5E67V-1HIfvTggMMsk3twhC0rPRWaQ8c_5N1U0cSz"/>
+<div class="absolute bottom-0 left-0 p-8 z-20">
+<span class="font-label-mono text-label-mono text-primary bg-black/50 px-3 py-1 rounded backdrop-blur-md">Caliber 9X-N</span>
+</div>
+</div>
+<!-- Spec Card 1 -->
+<div class="col-span-1 md:col-span-4 glass-card rounded-xl p-8 flex flex-col justify-between hover:bg-white/10 transition-colors duration-500">
+<span class="material-symbols-outlined text-outline text-3xl">dark_mode</span>
+<div>
+<h3 class="font-body-intro text-body-intro text-primary mb-2">Vantablack Dial</h3>
+<p class="font-body-main text-body-main text-on-surface-variant text-sm">Absorbs 99.96% of visible light, creating an optical void beneath the sapphire crystal.</p>
+</div>
+</div>
+<!-- Spec Card 2 -->
+<div class="col-span-1 md:col-span-4 glass-card rounded-xl p-8 flex flex-col justify-between hover:bg-white/10 transition-colors duration-500">
+<span class="material-symbols-outlined text-outline text-3xl">water_drop</span>
+<div>
+<h3 class="font-body-intro text-body-intro text-primary mb-2">Abyssal Rating</h3>
+<p class="font-body-main text-body-main text-on-surface-variant text-sm">Pressure tested to 30 ATM. Engineered for the deep.</p>
+</div>
+</div>
+<!-- Material Card -->
+<div class="col-span-1 md:col-span-12 glass-card rounded-xl p-8 md:p-12 mt-8 flex flex-col md:flex-row items-center gap-12 relative overflow-hidden">
+<div class="absolute right-0 top-0 w-1/2 h-full opacity-20 bg-[url('https://images.unsplash.com/photo-1594911772125-07fc7a2d8d9f?q=80&amp;w=1000&amp;auto=format&amp;fit=crop')] bg-cover bg-center mix-blend-luminosity pointer-events-none" data-alt="A dark, abstract textural background image resembling raw, unpolished ceramic or carbon fiber composite. The lighting highlights the rough, industrial yet sophisticated texture in pure monochromatic greys and blacks, fitting for a luxury materials showcase."></div>
+<div class="md:w-1/3 z-10">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-4">Forged Ceramic</h3>
+<p class="font-body-main text-body-main text-on-surface-variant">Three times harder than steel, entirely scratch-resistant, and astonishingly light. The Noir Chic's case undergoes a 14-day sintering process.</p>
+</div>
+<div class="md:w-2/3 grid grid-cols-2 md:grid-cols-4 gap-6 z-10">
+<div class="flex flex-col gap-2">
+<span class="font-label-mono text-label-mono text-outline">Weight</span>
+<span class="font-body-intro text-body-intro text-primary">68g</span>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-label-mono text-label-mono text-outline">Diameter</span>
+<span class="font-body-intro text-body-intro text-primary">41mm</span>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-label-mono text-label-mono text-outline">Thickness</span>
+<span class="font-body-intro text-body-intro text-primary">9.8mm</span>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-label-mono text-label-mono text-outline">Reserve</span>
+<span class="font-body-intro text-body-intro text-primary">72h</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Lifestyle Integration Section -->
+<section class="py-section-gap w-full relative h-[819px] flex items-center">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-black/60 z-10 mix-blend-multiply"></div>
+<img alt="Lifestyle" class="w-full h-full object-cover object-center grayscale opacity-80" data-alt="A moody, high-fashion lifestyle photograph of a person wearing a sleek black watch in a dim, architecturally modern environment. The subject is dressed in sharp, minimalist dark clothing. Cinematic lighting creates dramatic shadows, emphasizing the sleekness of the watch on the wrist against the dark fabrics and moody urban backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvMgaIlcXwNqjyi53ielmX_milaXzSMi92sNper55wHMCj2S1teqJ-A95uUYjjtfzM44dXEJpWQABH-yGifVEsYLBAvpqFlSeHAABkhLdQp1GPlHzjg6WhdMAh1uR1RqayZeVedYd70p_cOMmZXkpj5M2q_T0g2uuOnknIWRjq_y6md9XaJVc3pGckjK1gGyyj-bkBfexTl8l7YGQ8dbSKVIIDSne9gzypwqsVlaJRqFykDSdICivbaebrjiIW8CGD8xxATrfmdQ4H"/>
+</div>
+<div class="relative z-20 px-margin-mobile md:px-margin-desktop w-full grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-start-8 md:col-span-5 glass-panel p-10 rounded-xl border-l-2 border-l-white/30 backdrop-blur-3xl">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary mb-6">Presence,<br/>Not Noise.</h2>
+<p class="font-body-main text-body-main text-on-surface-variant mb-8">
+                        True luxury whispers. The Noir Chic is designed to disappear until it's needed, serving as a subtle extension of intention rather than a cry for attention.
+                    </p>
+<button class="flex items-center gap-4 text-primary hover:text-white transition-colors group">
+<span class="font-label-mono text-label-mono uppercase tracking-widest">Explore Heritage</span>
+<span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap bg-surface-container-lowest text-on-surface font-label-mono text-label-mono border-t border-white/5 md:pr-24 flex flex-col items-center justify-center space-y-8 px-margin-desktop">
+<div class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-white mb-4">
+            Timeless
+        </div>
+<nav class="flex flex-wrap justify-center gap-8 mb-8">
+<a class="text-on-surface-variant hover:text-primary underline transition-all" href="#">Legal</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-all" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-all" href="#">Heritage</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-all" href="#">Sustainability</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-all" href="#">Contact</a>
+</nav>
+<div class="text-on-surface-variant opacity-50">
+            © 2024 Timeless Horology. All Rights Reserved.
+        </div>
+<!-- Smooth Scroll to Top Trigger (Visual cue) -->
+<button class="mt-12 w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors group" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">arrow_upward</span>
+</button>
+</footer>
+</body></html>

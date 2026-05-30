@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rose Gold Essence - Timeless</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400&amp;family=JetBrains+Mono:wght@500&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-lowest": "#0e0e0e",
+                      "on-error": "#690005",
+                      "on-error-container": "#ffdad6",
+                      "surface-bright": "#393939",
+                      "surface": "#131313",
+                      "on-tertiary-container": "#656467",
+                      "on-secondary": "#2f3037",
+                      "outline-variant": "#444748",
+                      "surface-container-low": "#1b1b1b",
+                      "on-primary": "#2f3131",
+                      "on-tertiary": "#303033",
+                      "secondary-fixed-dim": "#c6c6cf",
+                      "on-background": "#e2e2e2",
+                      "tertiary-container": "#e4e1e5",
+                      "surface-container-high": "#2a2a2a",
+                      "on-secondary-container": "#b4b4bd",
+                      "primary-fixed": "#e2e2e2",
+                      "on-secondary-fixed-variant": "#45464e",
+                      "surface-tint": "#c6c6c7",
+                      "background": "#131313",
+                      "on-tertiary-fixed": "#1b1b1e",
+                      "error-container": "#93000a",
+                      "tertiary-fixed": "#e4e1e5",
+                      "primary-fixed-dim": "#c6c6c7",
+                      "on-primary-fixed-variant": "#454747",
+                      "inverse-surface": "#e2e2e2",
+                      "error": "#ffb4ab",
+                      "secondary-container": "#45464e",
+                      "on-surface-variant": "#c4c7c8",
+                      "surface-variant": "#353535",
+                      "surface-dim": "#131313",
+                      "on-primary-container": "#636565",
+                      "surface-container-highest": "#353535",
+                      "primary-container": "#e2e2e2",
+                      "tertiary": "#ffffff",
+                      "primary": "#ffffff",
+                      "inverse-on-surface": "#303030",
+                      "inverse-primary": "#5d5f5f",
+                      "on-surface": "#e2e2e2",
+                      "secondary-fixed": "#e2e1eb",
+                      "on-secondary-fixed": "#1a1b22",
+                      "secondary": "#c6c6cf",
+                      "outline": "#8e9192",
+                      "surface-container": "#1f1f1f",
+                      "on-tertiary-fixed-variant": "#47464a",
+                      "tertiary-fixed-dim": "#c8c6c9",
+                      "on-primary-fixed": "#1a1c1c"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "24px",
+                      "gutter": "32px",
+                      "section-gap": "160px",
+                      "margin-desktop": "80px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": [
+                              "Playfair Display"
+                      ],
+                      "body-intro": [
+                              "Geist"
+                      ],
+                      "body-main": [
+                              "Geist"
+                      ],
+                      "label-mono": [
+                              "JetBrains Mono"
+                      ],
+                      "headline-lg": [
+                              "Playfair Display"
+                      ],
+                      "display-hero": [
+                              "Playfair Display"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-intro": [
+                              "20px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "300"
+                              }
+                      ],
+                      "body-main": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-mono": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-hero": [
+                              "84px",
+                              {
+                                      "lineHeight": "92px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body { background-color: #000000; } /* Level 0: Pure Black */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-card-active {
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: inset 1px 1px 0px 0px rgba(255, 255, 255, 0.2);
+        }
+        .orb-pulse {
+            animation: pulse-ring 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(0.9); opacity: 0.5; box-shadow: 0 0 0 0 rgba(255,255,255,0.2); }
+            50% { transform: scale(1.1); opacity: 0.8; box-shadow: 0 0 20px 10px rgba(255,255,255,0.05); }
+            100% { transform: scale(0.9); opacity: 0.5; box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+        }
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        /* Hide scrollbar for bento grid if it overflows */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="text-on-background font-body-main antialiased selection:bg-surface-variant selection:text-primary">
+<!-- TopNavBar Shared Component -->
+<nav class="hidden md:flex justify-between items-center px-margin-desktop py-6 fixed top-0 w-full z-50 bg-white/8 backdrop-blur-[24px] border-b border-white/10 shadow-none">
+<a class="font-headline-lg text-headline-lg text-primary tracking-tighter" href="#">Timeless</a>
+<div class="flex space-x-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-main text-body-main" href="#">Men</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-main text-body-main" href="#">Women</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-main text-body-main" href="#">Kids</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-main text-body-main" href="#">Collections</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-main text-body-main" href="#">About</a>
+</div>
+<div>
+<button class="text-primary hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">settings_voice</span>
+</button>
+</div>
+</nav>
+<!-- SideNavBar Shared Component (Orb) -->
+<aside class="hidden xl:flex fixed right-0 top-0 h-screen w-24 z-40 bg-white/5 backdrop-blur-[20px] border-l border-white/10 shadow-2xl flex-col items-center justify-center space-y-8">
+<div class="relative w-12 h-12 mb-12 flex items-center justify-center cursor-pointer group" title="The Orb - Listening...">
+<div class="absolute inset-0 rounded-full border border-white/20 orb-pulse"></div>
+<div class="absolute inset-2 rounded-full bg-white/10 blur-sm group-hover:bg-white/20 transition-all"></div>
+<span class="material-symbols-outlined text-white/50 group-hover:text-white transition-colors z-10 text-xl" style="font-variation-settings: 'FILL' 1;">graphic_eq</span>
+</div>
+<nav class="flex flex-col space-y-6">
+<a class="text-primary bg-white/15 rounded-full p-4 flex items-center justify-center shadow-[inset_1px_1px_0px_rgba(255,255,255,0.2)]" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">graphic_eq</span>
+</a>
+<a class="text-on-surface-variant p-4 hover:bg-white/10 transition-all rounded-full flex items-center justify-center" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">watch</span>
+</a>
+<a class="text-on-surface-variant p-4 hover:bg-white/10 transition-all rounded-full flex items-center justify-center" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">history</span>
+</a>
+<a class="text-on-surface-variant p-4 hover:bg-white/10 transition-all rounded-full flex items-center justify-center" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">support_agent</span>
+</a>
+</nav>
+</aside>
+<!-- Main Canvas -->
+<main class="pt-40 pb-section-gap px-margin-mobile md:px-margin-desktop xl:pr-[calc(80px+6rem)]">
+<!-- Hero Section: Product Overview -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center min-h-[716px]">
+<!-- Text Content (Cols 1-5) -->
+<div class="md:col-span-5 flex flex-col items-start z-10 order-2 md:order-1 mt-12 md:mt-0">
+<p class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-widest mb-4">The Essence Collection</p>
+<h1 class="font-display-hero text-display-hero text-primary mb-6 leading-tight">Rose Gold<br/>Essence.</h1>
+<p class="font-body-intro text-body-intro text-on-surface-variant mb-8 max-w-md">
+                    A study in luminous reduction. Forged from proprietary 18k rose gold alloy, the Essence strips away the superfluous, leaving only the pure, uninterrupted flow of time displayed against a minimalist void.
+                </p>
+<div class="flex items-center space-x-6 mb-12">
+<span class="font-body-intro text-body-intro text-primary">$42,500</span>
+<span class="h-4 w-px bg-white/20"></span>
+<span class="font-label-mono text-label-mono text-on-surface-variant">40mm Case</span>
+</div>
+<button class="group relative overflow-hidden border border-white/20 bg-transparent px-10 py-5 transition-all duration-500 hover:border-white hover:bg-white" id="add-to-bag-btn">
+<span class="relative z-10 font-label-mono text-label-mono text-white group-hover:text-black uppercase tracking-widest flex items-center space-x-3 transition-colors duration-500">
+<span id="btn-text">Add to Bag</span>
+<span class="material-symbols-outlined text-sm opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-500" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</span>
+</button>
+</div>
+<!-- Image (Cols 6-12) -->
+<div class="md:col-span-7 h-[614px] md:h-[819px] relative order-1 md:order-2 group overflow-hidden rounded-2xl glass-card">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.05)_0%,transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-0"></div>
+<img class="w-full h-full object-cover object-center transform transition-transform duration-[2s] group-hover:scale-105 relative z-10 mix-blend-lighten" data-alt="A highly cinematic, close-up product shot of a luxury watch crafted in luminous rose gold. The watch is suspended in a pure, infinite black void, illuminated by sharp, sophisticated rim lighting that highlights the polished metallic curves and the pristine, minimalist dial. The overall aesthetic is incredibly premium, embodying a dark-mode, glassmorphic design language with deep shadows and striking, elegant highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIPUYYjpvxwW2XyuO98nE5DN-Z8_YErlrWxSCL-Y2uxNEqj5gfJJTZ8JK1_6Evd5OG16Fb1mPDl_fpcb17EwoaDIRxVR7Wuou8f5jzxYFTt4dHPAjpWTTq4D4A7o0fBuGYQnLOyeiQCM4_pq-2U5gTZ3iwSsIkSEwTHVEPLoUmIvKhUGt_t3BqD-H88ye-rxuMVIQeUdccuyrp0eL_ua1CpsvkhUFMEucIuJtb4ui8OKcDPEVzBjJ9DRE0jBzVSGr6jKjvxiEUcW-2"/>
+</div>
+</section>
+<!-- Spacer break -->
+<div class="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-section-gap"></div>
+<!-- Detailed Shots (Bento Grid) -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-12 mb-12 flex justify-between items-end">
+<h2 class="font-headline-lg text-headline-lg text-primary">Luminous Refinement.</h2>
+<p class="font-label-mono text-label-mono text-on-surface-variant max-w-xs text-right hidden md:block">Every angle reveals a dedication to immaculate surfacing and structural integrity.</p>
+</div>
+<!-- Bento Item 1: Large Wide -->
+<div class="md:col-span-8 h-[512px] glass-card rounded-2xl overflow-hidden group">
+<div class="w-full h-full bg-surface-container-low relative">
+<img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700" data-alt="An ultra-macro photograph focusing intimately on the complex mechanics and brushed rose gold textures of a high-end watch dial. Set against a deep, pure black background, the precise engineering is revealed through subtle, cool-toned lighting that contrasts with the warm gold. The image exudes a sense of technical mastery and dark, minimalist luxury consistent with a premium glassmorphic UI environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt37y3cxjERzEzOf37n496K4_ZnguFgHXK1OjFVmkoRkS6KUzcNjGVAMAehjNFyRe-mVeLjFvxW-Mez7IMBU_oZa6t3VTEMrdhQO-txumuolXLwrwks9IyaKdYZKGRv9vdhjodSKgE_D77nzyt6dDaOJPo6Ast9kmiBQnsJKZkJJWqNdJWab0_tluxImDRb8nIgKvqk-JWfXi2LNPAN9Tal5Ihfkci7IH4gnJYg09WPANEgonqMRqSNgUIICwygA_vP5i9ZpW0M_qm"/>
+</div>
+</div>
+<!-- Bento Item 2: Tall -->
+<div class="md:col-span-4 h-[512px] glass-card rounded-2xl overflow-hidden group p-8 flex flex-col justify-between relative">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 z-0"></div>
+<div class="z-10 relative">
+<span class="material-symbols-outlined text-white/50 mb-4" style="font-variation-settings: 'FILL' 0;">architecture</span>
+<h3 class="font-body-intro text-body-intro text-primary">Sculpted Sapphire</h3>
+</div>
+<p class="font-body-main text-body-main text-on-surface-variant z-10 relative">
+                    The domed sapphire crystal is seamlessly integrated into the rose gold bezel, creating an edge-to-edge glass experience that practically vanishes when viewed head-on.
+                </p>
+</div>
+</section>
+<!-- Spacer break -->
+<div class="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-section-gap"></div>
+<!-- AI Assistant Panel (The Orb Suggests) -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-2 md:col-start-2 xl:col-start-1 xl:col-span-2 flex flex-col items-center justify-start pt-12 hidden md:flex">
+<div class="w-16 h-16 rounded-full border border-white/20 bg-white/5 flex items-center justify-center orb-pulse mb-6">
+<span class="material-symbols-outlined text-white/70" style="font-variation-settings: 'FILL' 0;">blur_on</span>
+</div>
+</div>
+<div class="md:col-span-10 xl:col-span-9 glass-card rounded-[2rem] p-8 md:p-16 relative overflow-hidden">
+<!-- Inner glow top-left -->
+<div class="absolute top-0 left-0 w-full h-full border-t border-l border-white/20 rounded-[2rem] pointer-events-none"></div>
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-2 flex items-center space-x-4">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span>The Orb Suggests</span>
+</h2>
+<p class="font-body-main text-body-main text-on-surface-variant">Curated pairings to complete the Rose Gold Essence aesthetic.</p>
+</div>
+<button class="text-label-mono font-label-mono text-white uppercase tracking-widest border-b border-white/30 hover:border-white pb-1 transition-colors mt-6 md:mt-0">View All Matches</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Suggestion Card 1 -->
+<a class="block group relative glass-card p-6 rounded-xl hover:bg-white/10 transition-all duration-300" href="#">
+<div class="w-full h-48 bg-surface-container-low rounded-lg mb-6 overflow-hidden">
+<img class="w-full h-full object-cover mix-blend-lighten opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" data-alt="A sleek, modern matte black leather watch strap with a subtle rose gold clasp. Photographed against a pure black void with dramatic, directional studio lighting that emphasizes the rich texture of the leather and the metallic glint of the hardware. The mood is highly refined, perfectly suited for a dark, minimalist luxury e-commerce interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNHIt1SuPYRjY8cokMNuLFJF79MlMi4UH0hWoo4nP4e27WFhiOa9Wc30cpa7Q_Ap5xG2Bi6FwhrPPSB6lF3_8Jkz29BvtBJ0sD3cMY2x7DxlFtelJxTk398NTbDMi126owR5bxlB_pyndv6armwVs6BZXL6akpHc-cYPv8EeutprMmZDnNgksmJsAEx783NHf1i8h1AbXtH5FH8-keoI7-uDHDjd45BEGyBy_M06zDGhoCrlHOR5gqV2qksxGaPLDSsk_XX_72Oqyk"/>
+</div>
+<h4 class="font-body-main text-body-main text-primary mb-1">Obsidian Leather Strap</h4>
+<p class="font-label-mono text-label-mono text-on-surface-variant">$350</p>
+</a>
+<!-- Suggestion Card 2 -->
+<a class="block group relative glass-card p-6 rounded-xl hover:bg-white/10 transition-all duration-300" href="#">
+<div class="w-full h-48 bg-surface-container-low rounded-lg mb-6 overflow-hidden">
+<img class="w-full h-full object-cover mix-blend-lighten opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" data-alt="A sophisticated, minimalist rose gold cuff bracelet resting on a reflective black glass surface. The setting is a deep, infinite void illuminated by soft, atmospheric white light that creates a glowing, ethereal effect on the polished metal. The aesthetic is clean, cinematic, and embodies modern glassmorphic design principles." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_Wl5GmJ2i806XRaXi0bxawGxdxm53dtRAnw9WjHw8WilkkmrDq_VHFScu5rnV1uUql2IXrjZPdSmdHGPG8FJGHgMSCwWw7oYOp7dJ2EzbsqGI_khSNTvF9u2onhCvBGtDkijo6NT6DW7kcfLSQc8R0a4Iz5GfKa7SPUixYMXWICurOcxwn3-wixX5lrD2H4QDTyXsT-QaaEm9PoMbllke2DDPU_aFmes2LOBQujN1GNjBSORHIKX5UseKtrnGCwznd7QO7TQCRIUA"/>
+</div>
+<h4 class="font-body-main text-body-main text-primary mb-1">Essence Cuff</h4>
+<p class="font-label-mono text-label-mono text-on-surface-variant">$1,200</p>
+</a>
+<!-- Suggestion Card 3 -->
+<div class="hidden md:flex glass-card p-6 rounded-xl border-dashed border-white/20 items-center justify-center flex-col text-center hover:bg-white/5 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-white/40 mb-4 text-4xl" style="font-variation-settings: 'FILL' 0;">tune</span>
+<p class="font-body-main text-body-main text-on-surface-variant">Speak to refine<br/>these recommendations.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shared Component -->
+<footer class="w-full py-section-gap border-t border-white/5 bg-surface-container-lowest flex flex-col items-center justify-center space-y-8 px-margin-desktop relative z-10">
+<div class="font-headline-lg text-headline-lg text-white mb-4">Timeless</div>
+<div class="flex flex-wrap justify-center gap-8 mb-8">
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary underline transition-all" href="#">Legal</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary underline transition-all" href="#">Privacy Policy</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary underline transition-all" href="#">Heritage</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary underline transition-all" href="#">Sustainability</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary underline transition-all" href="#">Contact</a>
+</div>
+<div class="text-on-surface-variant text-label-mono font-label-mono">
+            © 2024 Timeless Horology. All Rights Reserved.
+        </div>
+</footer>
+<script>
+        // Simple Add to Bag interaction
+        document.getElementById('add-to-bag-btn').addEventListener('click', function() {
+            const btnText = document.getElementById('btn-text');
+            const originalText = btnText.innerText;
+            
+            btnText.innerText = 'Acquired';
+            this.classList.add('bg-white', 'text-black');
+            
+            setTimeout(() => {
+                btnText.innerText = originalText;
+                this.classList.remove('bg-white', 'text-black');
+            }, 2000);
+        });
+    </script>
+</body></html>

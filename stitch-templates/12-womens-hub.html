@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Timeless - Women's Collection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400&amp;family=JetBrains+Mono:wght@500&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-error": "#690005",
+                        "on-error-container": "#ffdad6",
+                        "surface-bright": "#393939",
+                        "surface": "#131313",
+                        "on-tertiary-container": "#656467",
+                        "on-secondary": "#2f3037",
+                        "outline-variant": "#444748",
+                        "surface-container-low": "#1b1b1b",
+                        "on-primary": "#2f3131",
+                        "on-tertiary": "#303033",
+                        "secondary-fixed-dim": "#c6c6cf",
+                        "on-background": "#e2e2e2",
+                        "tertiary-container": "#e4e1e5",
+                        "surface-container-high": "#2a2a2a",
+                        "on-secondary-container": "#b4b4bd",
+                        "primary-fixed": "#e2e2e2",
+                        "on-secondary-fixed-variant": "#45464e",
+                        "surface-tint": "#c6c6c7",
+                        "background": "#131313",
+                        "on-tertiary-fixed": "#1b1b1e",
+                        "error-container": "#93000a",
+                        "tertiary-fixed": "#e4e1e5",
+                        "primary-fixed-dim": "#c6c6c7",
+                        "on-primary-fixed-variant": "#454747",
+                        "inverse-surface": "#e2e2e2",
+                        "error": "#ffb4ab",
+                        "secondary-container": "#45464e",
+                        "on-surface-variant": "#c4c7c8",
+                        "surface-variant": "#353535",
+                        "surface-dim": "#131313",
+                        "on-primary-container": "#636565",
+                        "surface-container-highest": "#353535",
+                        "primary-container": "#e2e2e2",
+                        "tertiary": "#ffffff",
+                        "primary": "#ffffff",
+                        "inverse-on-surface": "#303030",
+                        "inverse-primary": "#5d5f5f",
+                        "on-surface": "#e2e2e2",
+                        "secondary-fixed": "#e2e1eb",
+                        "on-secondary-fixed": "#1a1b22",
+                        "secondary": "#c6c6cf",
+                        "outline": "#8e9192",
+                        "surface-container": "#1f1f1f",
+                        "on-tertiary-fixed-variant": "#47464a",
+                        "tertiary-fixed-dim": "#c8c6c9",
+                        "on-primary-fixed": "#1a1c1c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "24px",
+                        "gutter": "32px",
+                        "section-gap": "160px",
+                        "margin-desktop": "80px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "body-intro": ["Geist"],
+                        "body-main": ["Geist"],
+                        "label-mono": ["JetBrains Mono"],
+                        "headline-lg": ["Playfair Display"],
+                        "display-hero": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-intro": ["20px", { "lineHeight": "32px", "fontWeight": "300" }],
+                        "body-main": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-mono": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "fontWeight": "600" }],
+                        "display-hero": ["84px", { "lineHeight": "92px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Custom Utilities for Glassmorphism & Animations not strictly covered by basic tailwind */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-card-active {
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: inset 1px 1px 0px 0px rgba(255, 255, 255, 0.2);
+        }
+        
+        .voice-orb-breathing {
+            animation: breathe 4s ease-in-out infinite;
+        }
+        
+        @keyframes breathe {
+            0%, 100% { box-shadow: 0 0 10px 0px rgba(255,255,255,0.2); transform: scale(1); }
+            50% { box-shadow: 0 0 25px 5px rgba(255,255,255,0.4); transform: scale(1.05); }
+        }
+
+        .watch-parallax-hover:hover img {
+            transform: scale(1.05);
+        }
+        .watch-parallax-hover img {
+            transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased overflow-x-hidden selection:bg-white/20 selection:text-white">
+<!-- Top Navigation (Desktop Only) -->
+<nav class="hidden md:flex fixed top-0 w-full z-50 bg-white/8 backdrop-blur-[24px] border-b border-white/10 shadow-none justify-between items-center px-margin-desktop py-6">
+<div class="font-headline-lg text-headline-lg text-primary tracking-tighter">Timeless</div>
+<ul class="flex space-x-8 items-center font-body-main text-body-main">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Men</a></li>
+<!-- Active State -->
+<li><a class="text-primary font-bold border-b-2 border-primary pb-1 active:scale-95 transition-transform" href="#">Women</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Kids</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Collections</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">About</a></li>
+</ul>
+<div class="flex items-center space-x-6 text-primary dark:text-tertiary">
+<button class="hover:text-primary transition-colors duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="hover:text-primary transition-colors duration-300 flex items-center justify-center active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="settings_voice">settings_voice</span>
+</button>
+</div>
+</nav>
+<!-- Side Navigation (Desktop Only) -->
+<aside class="hidden md:flex fixed right-0 h-screen w-24 z-40 bg-white/5 backdrop-blur-[20px] border-l border-white/10 shadow-2xl flex-col items-center justify-center space-y-8">
+<!-- Voice Orb Header -->
+<div class="absolute top-8 flex flex-col items-center group cursor-pointer" title="The Orb - Listening...">
+<div class="w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center voice-orb-breathing mb-2">
+<div class="w-8 h-8 rounded-full bg-white/20 blur-[2px]"></div>
+</div>
+<span class="sr-only">AI Voice Concierge Orb</span>
+</div>
+<nav class="flex flex-col space-y-6 font-label-mono text-label-mono text-tertiary">
+<!-- Active Tab -->
+<button class="flex flex-col items-center justify-center text-primary bg-white/15 rounded-full p-4 hover:bg-white/10 transition-all group relative">
+<span class="material-symbols-outlined" data-icon="graphic_eq" style="font-variation-settings: 'FILL' 1;">graphic_eq</span>
+<span class="absolute right-full mr-4 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap bg-surface-container-highest px-3 py-1 rounded-full text-on-surface">Concierge</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-4 hover:bg-white/10 transition-all rounded-full group relative">
+<span class="material-symbols-outlined" data-icon="watch">watch</span>
+<span class="absolute right-full mr-4 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap bg-surface-container-highest px-3 py-1 rounded-full text-on-surface">Portfolio</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-4 hover:bg-white/10 transition-all rounded-full group relative">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="absolute right-full mr-4 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap bg-surface-container-highest px-3 py-1 rounded-full text-on-surface">Heritage</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-4 hover:bg-white/10 transition-all rounded-full group relative">
+<span class="material-symbols-outlined" data-icon="support_agent">support_agent</span>
+<span class="absolute right-full mr-4 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap bg-surface-container-highest px-3 py-1 rounded-full text-on-surface">Assistance</span>
+</button>
+</nav>
+<div class="absolute bottom-8">
+<button class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors writing-vertical-rl rotate-180 tracking-widest">
+                Speak Now
+            </button>
+</div>
+</aside>
+<!-- Mobile Bottom Navigation Shell -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 bg-white/8 backdrop-blur-[24px] border-t border-white/10 flex justify-around items-center py-4 px-margin-mobile pb-8 shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
+<button class="flex flex-col items-center justify-center text-primary">
+<span class="material-symbols-outlined mb-1" data-icon="graphic_eq" style="font-variation-settings: 'FILL' 1;">graphic_eq</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined mb-1" data-icon="watch">watch</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined mb-1" data-icon="history">history</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined mb-1" data-icon="support_agent">support_agent</span>
+</button>
+</nav>
+<!-- Main Content Canvas -->
+<!-- Add padding to account for fixed navs on desktop -->
+<main class="md:pt-[110px] md:pr-24 pb-32 md:pb-0">
+<!-- Hero Section -->
+<section class="relative min-h-[819px] flex items-center px-margin-mobile md:px-margin-desktop py-20">
+<!-- Background Radial Gradient Fade -->
+<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-background/80 to-background pointer-events-none z-10"></div>
+<div class="absolute inset-0 z-0">
+<img alt="Women's Watch Hero Lifestyle" class="w-full h-full object-cover opacity-60" data-alt="A cinematic, ultra-high-resolution lifestyle photograph of a luxurious women's watch resting on a piece of dark, polished slate. The scene is illuminated by moody, soft directional lighting that highlights the shimmering sapphire crystal and intricate dial details. The background features deep, out-of-focus shadows, maintaining a minimalist and elegant dark mode aesthetic. The overall mood conveys exclusivity, timeless grace, and sophisticated technical mastery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCI0cB8jSmoWvJ2WSi5kTTd6NHWvC-5deCzVPZ60NQperkZ9txCLyMTSF3uURX0jxYjZ2aHRJmBPoQBO2zRRmwtFZ3mOzrvMNSwmGztWJRBodQ8Ya6HtFM-wxhPjw9yJbHA4FA62XENHizyByvoHPcFmaJKuDIN32l1zanq97cFQFR87tkT9dJ-xYJtVF0PwrMvxrWOBxpU9pRnL39v-Kxi9NHvDVEfxgLd7xW8hAQPvSkCP1pV0Zbszh6so3O6mPpSTu6phJxd1pSU"/>
+</div>
+<div class="relative z-20 max-w-4xl">
+<nav aria-label="Breadcrumb" class="mb-6">
+<span class="font-label-mono text-label-mono text-on-surface-variant tracking-widest uppercase">Home / Women</span>
+</nav>
+<h1 class="font-display-hero text-display-hero text-primary mb-6">
+                    Women's<br/>Collection
+                </h1>
+<p class="font-body-intro text-body-intro text-on-surface-variant max-w-xl mb-12">
+                    A curation of exquisite timepieces blending traditional horological prestige with fluid, modern aesthetics. Discover a physical layer of polished luxury floating within infinite design space.
+                </p>
+</div>
+</section>
+<!-- Elegant Collection Section -->
+<section class="px-margin-mobile md:px-margin-desktop mt-section-gap relative">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-2">Elegant Collection</h2>
+<p class="font-body-main text-body-main text-on-surface-variant max-w-md">Masterpieces of understatement, designed for moments that demand quiet confidence.</p>
+</div>
+<button class="group px-6 py-3 border border-white/20 rounded-full font-label-mono text-label-mono text-primary hover:bg-white/90 hover:text-surface-container-lowest transition-all duration-500 ease-out flex items-center gap-2">
+                    Explore Collection
+                    <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Large Featured Card (Spans 8 cols) -->
+<article class="md:col-span-8 glass-card rounded-xl overflow-hidden relative watch-parallax-hover group min-h-[500px] flex items-end p-8 cursor-pointer">
+<img alt="Elegant Silver Timepiece" class="absolute inset-0 w-full h-full object-cover opacity-80" data-alt="A close-up macro shot of an elegant women's timepiece with a minimalist silver dial and a slender black leather strap. The watch is positioned against a subtle, dark grey frosted glass surface, reflecting faint glimmers of light. The lighting is diffused and ethereal, creating soft gradients across the metallic components. The image perfectly embodies a refined, modern luxury style within a dark atmospheric setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkTMCvuDhCU6hLLBRMwMyXvkkDH_V_sAqQliTf9GtxI2ecF07nuT5ixOzg9WK3ReYNG06ABU_HdXyBT5M8iQ3npDYplOFci2Mjqjy3ZeqSoXNoAkA6pwY8935cqvZ0zntR-Z-9l5HyFayzFqUHZYOfnzDWu9uObOHsL9MGAGH_jZTHzhDFKnZZ8yn4xJrFOYFMthpNuM84ncz5tExyHGWxAqO6dHk-Z4P5Fnec7YB2nks3l61dlaib506We2ivWi6j5s1F6NwNL-gp"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none"></div>
+<div class="relative z-10 w-full flex justify-between items-end">
+<div>
+<span class="font-label-mono text-label-mono text-secondary-fixed-dim uppercase block mb-2">The Aurelia</span>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Sapphire Silhouette</h3>
+</div>
+<div class="font-label-mono text-label-mono text-on-surface-variant text-right">
+<span class="block text-primary text-lg mb-1">$4,200</span>
+                            36mm • Auto
+                        </div>
+</div>
+</article>
+<!-- Stacked Cards (Spans 4 cols) -->
+<div class="md:col-span-4 flex flex-col gap-gutter">
+<article class="flex-1 glass-card rounded-xl overflow-hidden relative watch-parallax-hover group p-6 cursor-pointer min-h-[250px] flex items-end">
+<img alt="Rose Gold Elegance" class="absolute inset-0 w-full h-full object-cover opacity-70" data-alt="A sophisticated still life featuring a delicate rose gold women's watch draped gracefully over a textured piece of raw charcoal. The high-contrast dark environment emphasizes the warm, glowing tones of the gold and the sparkling diamond accents on the bezel. The depth of field is incredibly shallow, blurring out the background into a smooth, dark gradient. The composition evokes a sense of tactile digitalism and premium horological craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDygTtF1bv6dFd0JexgHT72FvpZ0jHuGzI2Ig6RUcbPv_ApPuYH3JlcwN4cEXsOzbB9VolIKKuvVFDsWkLh4Lwbny9LM7YdXvbOVLW8MTZeXuvdULl8RwDhbPQdAcBqv2Xz1ntMih_uf62W3SLYlscuhWWOegPrT2lcF7qOHNvdzzuxZ4ISE6NLZxSwOo6vCHgmRva5xyPi-eaGf0XtFEz2Ustq92fEpste9RZy8VvguaKUyQq4bwAYHLrGWBUFy2woHtK93voh5St"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent pointer-events-none"></div>
+<div class="relative z-10">
+<span class="font-label-mono text-label-mono text-secondary-fixed-dim block mb-1">Celeste</span>
+<h3 class="font-body-intro text-body-intro text-primary">Rose Gold Mesh</h3>
+</div>
+</article>
+<article class="flex-1 glass-card rounded-xl overflow-hidden relative watch-parallax-hover group p-6 cursor-pointer min-h-[250px] flex items-end">
+<img alt="Monochrome Minimalist Watch" class="absolute inset-0 w-full h-full object-cover opacity-70 mix-blend-luminosity" data-alt="A moody, monochromatic image of a minimalist women's watch with a stark white dial and thin steel hands. The watch floats within a pitch-black void, illuminated only by a single, sharp beam of white light that cuts diagonally across the frame, highlighting the precision of the mechanics. The aesthetic is stark, futuristic, and heavily emphasizes the interplay of light and deep shadow." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVDyZGhiWlxgtxpIygKQOJVWw3tmdShlELJEV4BDrqT3nCHCYScM_wHakd3-GaLJMqZezF-aA5FK8rcfA62wvM4IxLlN9r39xRhVlRWKc-Zb7A3HL8Fc3AVSFrZyBJw7C8uCggv6d5PAyqXLxk58CzaNoQdJ5W3cuAB6V2AZUBB7E7Q4WekTQ1w3_vnA8Gs77MZYAHPx5jJRKFGu9UD53Wji9fAAZVqqj9XpaQSG5lJaYlNdUFUqIY7A7TkvAToc9m1-d6Bl7hQyFp"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent pointer-events-none"></div>
+<div class="relative z-10">
+<span class="font-label-mono text-label-mono text-secondary-fixed-dim block mb-1">Nova</span>
+<h3 class="font-body-intro text-body-intro text-primary">Obsidian Dial</h3>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- Spacer -->
+<div class="h-section-gap w-full">
+<div class="w-full h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-surface/20 to-transparent"></div>
+</div>
+<!-- Fashion Collection Section (Asymmetric Layout) -->
+<section class="px-margin-mobile md:px-margin-desktop relative">
+<div class="mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-2 text-center">Fashion Collection</h2>
+<p class="font-body-main text-body-main text-on-surface-variant max-w-xl mx-auto text-center">Avant-garde forms meeting traditional mechanics. A bold statement on the wrist.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-y-16 md:gap-gutter items-center">
+<!-- Left Offset Card -->
+<article class="md:col-start-2 md:col-span-5 relative group watch-parallax-hover cursor-pointer z-10">
+<div class="glass-card rounded-xl overflow-hidden aspect-[4/5] relative">
+<img alt="Black Ceramic Fashion Watch" class="w-full h-full object-cover opacity-80" data-alt="An avant-garde editorial photograph of a bold, fashion-forward women's smartwatch with a sleek, continuous black ceramic band. The watch is worn on the wrist of a silhouette against an inky black background with subtle, organic shapes of light floating in the distance. The overall aesthetic is futuristic, mysterious, and highly polished, blending traditional luxury with advanced digital design principles." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2SvFXc2Bpxu0xeFo0ccJqnLf_mJukzSecF6SEsyfSJQbgfusJe3bUKO0GqjqRxfds92pp7QyMmBoG7cZVL0mVs2k0Qr1L2NtzFRs7dFdUtZVonPTU3F24E79Tp9T2gwB11_b2kE_YvSk504UuIShL3HCnydhRYM6KddR7VPuGnCaYWLGzYODMRUt_tRIxLvZ2QLgu6HZuglNAsSmi3_d0CXw04QqfPSWy_ZCut21-lTKMfyH7uN9y-NTIH4-kogeKy0dV5trYe353"/>
+</div>
+<!-- Overlapping Details Card -->
+<div class="absolute -bottom-8 -right-8 md:-right-12 glass-card p-6 rounded-xl w-3/4 shadow-2xl z-20 group-hover:glass-card-active transition-all duration-300">
+<span class="font-label-mono text-label-mono text-primary tracking-widest uppercase mb-1 block">Avant Series</span>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-2">Ceramic Night</h3>
+<p class="font-body-main text-body-main text-on-surface-variant text-sm line-clamp-2">Fluid ceramic integration creating a seamless band of deep onyx across the wrist.</p>
+</div>
+</article>
+<!-- Right Offset Details & Secondary Image -->
+<div class="md:col-start-8 md:col-span-4 flex flex-col justify-center space-y-12">
+<article class="relative group watch-parallax-hover cursor-pointer w-full md:w-5/6 ml-auto">
+<div class="glass-card rounded-full overflow-hidden aspect-square relative">
+<img alt="Iridescent Dial Detail" class="w-full h-full object-cover opacity-70" data-alt="A highly stylized detail shot of a unique rectangular women's watch face, featuring an iridescent mother-of-pearl dial. The watch sits on an abstract geometric structure made of frosted acrylic, bathed in cool, cinematic blue and purple rim lighting. The surrounding space is vast and dark, emphasizing the glowing, ethereal quality of the watch materials. The shot perfectly captures a minimalist, glassmorphic design sensibility." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkdZZvhc2_s6wvbx-Ldf6eZYPD3zybrjhpWeMk6BonM1kfepGJyG8KS-ftD3ryvUA782kjVWvhbuEQc92RSZwCrAR9eXj9BXMbNNzjkQGO4imgS4CEBEsMuc6kwGa2kJF2hcnauHqhX5kmZSTfVFS4elm-43dJT0pzhHJ8VRBcZny5yhsveKjAGFObIwrSjetdWQdy--CDP39ttZqXVzKPfdsvyCVjvTQssfM4jX86eMHTxhHesrMLE0pzRJIAYh4n1vFYeN_jPKAo"/>
+</div>
+</article>
+<div class="pl-8 border-l border-white/10">
+<h4 class="font-body-intro text-body-intro text-primary mb-4">Material Innovation</h4>
+<p class="font-body-main text-body-main text-on-surface-variant mb-6">
+                            Utilizing high-density sapphire and precision-milled titanium, the Fashion Collection challenges structural norms while maintaining perfect weight distribution.
+                        </p>
+<a class="inline-flex items-center gap-2 font-label-mono text-label-mono text-primary hover:text-white transition-colors border-b border-primary/30 hover:border-white pb-1" href="#">
+                            Discover Materials
+                            <span class="material-symbols-outlined text-[16px]" data-icon="east">east</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Bottom spacing before footer -->
+<div class="h-32"></div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap bg-surface-container-lowest border-t border-white/5 flex flex-col items-center justify-center space-y-8 px-margin-desktop md:pr-[calc(24px+96px)] relative z-30">
+<div class="font-headline-lg text-headline-lg text-white">Timeless</div>
+<nav aria-label="Footer Navigation">
+<ul class="flex flex-wrap justify-center gap-x-8 gap-y-4 font-label-mono text-label-mono">
+<li><a class="text-on-surface-variant hover:text-primary hover:underline transition-all" href="#">Legal</a></li>
+<li><a class="text-on-surface-variant hover:text-primary hover:underline transition-all" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-primary hover:underline transition-all" href="#">Heritage</a></li>
+<li><a class="text-on-surface-variant hover:text-primary hover:underline transition-all" href="#">Sustainability</a></li>
+<li><a class="text-on-surface-variant hover:text-primary hover:underline transition-all" href="#">Contact</a></li>
+</ul>
+</nav>
+<div class="text-on-surface-variant font-label-mono text-label-mono text-center opacity-60">
+            © 2024 Timeless Horology. All Rights Reserved.
+        </div>
+<!-- Smooth Scroll to Top Interaction Placeholder -->
+<button class="mt-8 text-on-surface-variant hover:text-primary transition-colors flex flex-col items-center gap-2 font-label-mono text-label-mono" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+<span class="material-symbols-outlined" data-icon="keyboard_arrow_up">keyboard_arrow_up</span>
+            Top
+        </button>
+</footer>
+</body></html>

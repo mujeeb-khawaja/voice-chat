@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Carbon Racer - Timeless</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-error": "#690005",
+                        "on-error-container": "#ffdad6",
+                        "surface-bright": "#393939",
+                        "surface": "#131313",
+                        "on-tertiary-container": "#656467",
+                        "on-secondary": "#2f3037",
+                        "outline-variant": "#444748",
+                        "surface-container-low": "#1b1b1b",
+                        "on-primary": "#2f3131",
+                        "on-tertiary": "#303033",
+                        "secondary-fixed-dim": "#c6c6cf",
+                        "on-background": "#e2e2e2",
+                        "tertiary-container": "#e4e1e5",
+                        "surface-container-high": "#2a2a2a",
+                        "on-secondary-container": "#b4b4bd",
+                        "primary-fixed": "#e2e2e2",
+                        "on-secondary-fixed-variant": "#45464e",
+                        "surface-tint": "#c6c6c7",
+                        "background": "#131313",
+                        "on-tertiary-fixed": "#1b1b1e",
+                        "error-container": "#93000a",
+                        "tertiary-fixed": "#e4e1e5",
+                        "primary-fixed-dim": "#c6c6c7",
+                        "on-primary-fixed-variant": "#454747",
+                        "inverse-surface": "#e2e2e2",
+                        "error": "#ffb4ab",
+                        "secondary-container": "#45464e",
+                        "on-surface-variant": "#c4c7c8",
+                        "surface-variant": "#353535",
+                        "surface-dim": "#131313",
+                        "on-primary-container": "#636565",
+                        "surface-container-highest": "#353535",
+                        "primary-container": "#e2e2e2",
+                        "tertiary": "#ffffff",
+                        "primary": "#ffffff",
+                        "inverse-on-surface": "#303030",
+                        "inverse-primary": "#5d5f5f",
+                        "on-surface": "#e2e2e2",
+                        "secondary-fixed": "#e2e1eb",
+                        "on-secondary-fixed": "#1a1b22",
+                        "secondary": "#c6c6cf",
+                        "outline": "#8e9192",
+                        "surface-container": "#1f1f1f",
+                        "on-tertiary-fixed-variant": "#47464a",
+                        "tertiary-fixed-dim": "#c8c6c9",
+                        "on-primary-fixed": "#1a1c1c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "24px",
+                        "gutter": "32px",
+                        "section-gap": "160px",
+                        "margin-desktop": "80px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Playfair Display", "serif"],
+                        "body-intro": ["Geist", "sans-serif"],
+                        "body-main": ["Geist", "sans-serif"],
+                        "label-mono": ["JetBrains Mono", "monospace"],
+                        "headline-lg": ["Playfair Display", "serif"],
+                        "display-hero": ["Playfair Display", "serif"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-intro": ["20px", { "lineHeight": "32px", "fontWeight": "300" }],
+                        "body-main": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-mono": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "fontWeight": "600" }],
+                        "display-hero": ["84px", { "lineHeight": "92px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Smooth scrolling and basic reset */
+        html { scroll-behavior: smooth; }
+        body { background-color: #0e0e0e; overflow-x: hidden; }
+
+        /* Custom Scrollbar for Dark Minimalist Theme */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.1); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.2); }
+
+        /* Orb Animation */
+        @keyframes pulse-ring {
+            0% { transform: scale(0.8); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
+            70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(255, 255, 255, 0); }
+            100% { transform: scale(0.8); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+        }
+        .orb-active {
+            animation: pulse-ring 2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+
+        /* Glassmorphism Utilities */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-active-edge {
+            box-shadow: inset 1px 1px 0px 0px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Subtle Soft Break Gradient */
+        .soft-break-top {
+            background: linear-gradient(180deg, #0e0e0e 0%, rgba(14,14,14,0) 100%);
+        }
+        .soft-break-bottom {
+            background: linear-gradient(0deg, #0e0e0e 0%, rgba(14,14,14,0) 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface font-body-main selection:bg-primary selection:text-surface-container-lowest">
+<!-- TopNavBar Shared Component -->
+<nav class="fixed top-0 w-full z-50 bg-white/8 backdrop-blur-[24px] text-primary dark:text-tertiary font-body-main text-body-main border-b border-white/10 shadow-none flex justify-between items-center px-margin-desktop py-6 w-full hidden md:flex">
+<div class="flex items-center gap-gutter">
+<span class="font-headline-lg text-headline-lg text-primary tracking-tighter">Timeless</span>
+</div>
+<div class="flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Men</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Women</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Kids</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Collections</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">About</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-on-surface-variant hover:text-primary transition-colors duration-300 hover:scale-95">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors duration-300 hover:scale-95">
+<span class="material-symbols-outlined">settings_voice</span>
+</button>
+</div>
+</nav>
+<!-- SideNavBar Shared Component (AI Active State) -->
+<aside class="fixed right-0 h-screen w-24 z-40 bg-white/5 backdrop-blur-[20px] text-tertiary font-label-mono text-label-mono border-l border-white/10 shadow-2xl flex flex-col items-center justify-center space-y-8 h-full hidden md:flex">
+<!-- AI Orb Header Area -->
+<div class="absolute top-8 flex flex-col items-center gap-2 group cursor-pointer">
+<div class="w-12 h-12 rounded-full bg-white/20 orb-active flex items-center justify-center glass-active-edge transition-all duration-300">
+<div class="w-8 h-8 rounded-full bg-white shadow-[0_0_15px_rgba(255,255,255,0.8)]"></div>
+</div>
+<span class="font-headline-lg-mobile text-[10px] text-white opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap absolute top-14">The Orb</span>
+<span class="text-[8px] text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap absolute top-18">Listening...</span>
+</div>
+<!-- Navigation Tabs -->
+<div class="flex flex-col gap-6 mt-16">
+<!-- Active Tab: Concierge (AI Assistant) -->
+<button class="group flex flex-col items-center gap-2 text-primary bg-white/15 rounded-full p-4 glass-active-edge" title="Concierge">
+<span class="material-symbols-outlined fill text-[24px]">graphic_eq</span>
+<span class="sr-only">Concierge</span>
+</button>
+<button class="group flex flex-col items-center gap-2 text-on-surface-variant p-4 hover:bg-white/10 transition-all rounded-full" title="Portfolio">
+<span class="material-symbols-outlined text-[24px]">watch</span>
+<span class="sr-only">Portfolio</span>
+</button>
+<button class="group flex flex-col items-center gap-2 text-on-surface-variant p-4 hover:bg-white/10 transition-all rounded-full" title="Heritage">
+<span class="material-symbols-outlined text-[24px]">history</span>
+<span class="sr-only">Heritage</span>
+</button>
+<button class="group flex flex-col items-center gap-2 text-on-surface-variant p-4 hover:bg-white/10 transition-all rounded-full" title="Assistance">
+<span class="material-symbols-outlined text-[24px]">support_agent</span>
+<span class="sr-only">Assistance</span>
+</button>
+</div>
+<button class="absolute bottom-8 rotate-90 whitespace-nowrap tracking-widest text-[10px] hover:text-primary transition-colors">
+            SPEAK NOW
+        </button>
+</aside>
+<!-- Main Canvas -->
+<main class="w-full relative pr-0 md:pr-24 pt-24 md:pt-32">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center px-margin-mobile md:px-margin-desktop py-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter w-full relative z-10">
+<!-- Typography / Intro -->
+<div class="md:col-span-5 md:col-start-1 flex flex-col justify-center gap-8 relative z-20">
+<div class="flex flex-col gap-2">
+<span class="font-label-mono text-label-mono text-outline uppercase tracking-[0.2em]">Ref. 994.CF.12</span>
+<h1 class="font-display-hero text-display-hero text-primary leading-tight uppercase">Carbon<br/>Racer</h1>
+</div>
+<p class="font-body-intro text-body-intro text-on-surface-variant max-w-md">
+                        Forged in the crucible of motorsport engineering. A relentless pursuit of weight reduction meets unparalleled horological precision, encased in a pure carbon fiber monolith.
+                    </p>
+<div class="flex items-center gap-6 mt-8">
+<button class="px-8 py-4 border border-white/20 text-primary font-label-mono text-label-mono uppercase tracking-widest hover:bg-white hover:text-surface-container-lowest transition-all duration-500 rounded-none relative overflow-hidden group">
+<span class="relative z-10">Acquire</span>
+</button>
+<span class="font-label-mono text-label-mono text-on-surface-variant">$42,500</span>
+</div>
+</div>
+<!-- Hero Imagery -->
+<div class="md:col-span-7 relative h-[614px] md:h-auto mt-12 md:mt-0 flex items-center justify-center group">
+<!-- Atmospheric glow behind watch -->
+<div class="absolute inset-0 bg-white/5 blur-[120px] rounded-full mix-blend-screen opacity-50 transition-opacity duration-700 group-hover:opacity-80"></div>
+<img alt="Carbon Racer Watch" class="w-full h-full object-contain object-center drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)] transform transition-transform duration-[1.5s] ease-out group-hover:scale-105 group-hover:-translate-y-4 relative z-10" data-alt="A high-fidelity, macro product shot of an aggressively styled, technical carbon fiber chronograph watch suspended in a void. The watch features a dark, interwoven carbon composite case, intricate mechanical dial with red accents, and sharp geometric angles. The lighting is dramatic and directional, highlighting the matte texture of the carbon fiber against a pure, infinite black background, creating a luxurious and futuristic light-mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRy5fZHc2RQHYEWj9Qm89cbuN0VKQyuBR2eDrkBcplzJs-a3OkGURAkBKfpbs0DGBf4qkGbNHPFE0n0sfQjo3Eb2ZThNIW_EZpA36MbfVbTzxyNcSeNfcV-bruMzGA8DtZR--LTNKLOlttObs-EMuz7g0qYuVCrXg-FMkTH4S-D_B_osyT2fZL6BbaQG737sKvfLIdntj2RfShRh95_RCPffXofCTCnFP9sBoTz5NTpoNJ5fEMUEI6DtvMxtYJlUmY2DyyC_jIntK2"/>
+</div>
+</div>
+</section>
+<!-- Exploded View / Glassmorphism Overlay Section -->
+<section class="relative min-h-screen py-section-gap px-margin-mobile md:px-margin-desktop overflow-hidden border-t border-white/5">
+<!-- Deep Background Image -->
+<div class="absolute inset-0 z-0 opacity-40 mix-blend-luminosity grayscale">
+<img alt="Movement Background" class="w-full h-full object-cover object-center" data-alt="A hyper-realistic 3D exploded view rendering of a complex mechanical watch movement floating in a vast, dark space. Hundreds of tiny gears, springs, and bridges are separated along the z-axis, glowing faintly with metallic highlights. The scene relies on a sophisticated palette of deep blacks and pristine whites, conveying technical mastery and cinematic depth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPYedF1eVYSIfTbp1bB4IA_RLIlgHNAZUmb6gC0Ae0udFtxhi8qL-YMFGJlKr2Bq8T2qGI_14_4WKTatYJDi09WkQfEylKTHKWg--O3_Fwus9xmMojbeP_5Xy3FTrXJ_WpFLieTa1MGFe5SCIxh-NaZPuH0-wvMvEAkz8rL5hCd_PMG5iHUa_4X70n2cmm6T_Ga9WGSBGMrAU654leFWNml_s5U-lvKefuSR7Wsml4RodqvvOVF9odicW73zbyNZLk6Tn-v3m89ASJ"/>
+<div class="absolute inset-0 bg-surface-container-lowest/80"></div>
+</div>
+<div class="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-gutter h-full">
+<div class="md:col-span-4 flex flex-col justify-center">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Calibre<br/>CR-X1</h2>
+<p class="font-body-main text-body-main text-on-surface-variant mb-12">
+                        Visible through the sapphire crystal case back, the skeletonized movement reveals the beating heart of the racer. A column-wheel chronograph mechanism meticulously hand-finished with anglage and black DLC coating.
+                    </p>
+<!-- Glass Interactive List -->
+<ul class="space-y-4">
+<li class="glass-panel p-6 rounded-lg glass-active-edge cursor-pointer hover:bg-white/10 transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-label-mono text-label-mono text-primary">01 // Escapement</span>
+<span class="material-symbols-outlined text-outline">arrow_forward</span>
+</div>
+</li>
+<li class="glass-panel p-6 rounded-lg cursor-pointer hover:bg-white/10 transition-colors opacity-70 hover:opacity-100">
+<div class="flex items-center justify-between">
+<span class="font-label-mono text-label-mono text-primary">02 // Mainspring Barrel</span>
+<span class="material-symbols-outlined text-outline">arrow_forward</span>
+</div>
+</li>
+<li class="glass-panel p-6 rounded-lg cursor-pointer hover:bg-white/10 transition-colors opacity-70 hover:opacity-100">
+<div class="flex items-center justify-between">
+<span class="font-label-mono text-label-mono text-primary">03 // Column Wheel</span>
+<span class="material-symbols-outlined text-outline">arrow_forward</span>
+</div>
+</li>
+</ul>
+</div>
+<!-- Glass Overlay Focus Area -->
+<div class="md:col-span-7 md:col-start-6 relative flex items-center justify-center mt-16 md:mt-0">
+<div class="w-full aspect-square md:aspect-video glass-panel rounded-xl flex items-center justify-center relative overflow-hidden group">
+<!-- Simulated Focus Ring -->
+<div class="absolute w-[300px] h-[300px] border border-white/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-1000 ease-in-out">
+<div class="w-2 h-2 bg-primary rounded-full absolute top-0 transform -translate-y-1/2"></div>
+<div class="w-2 h-2 bg-primary rounded-full absolute bottom-0 transform translate-y-1/2"></div>
+<div class="w-2 h-2 bg-primary rounded-full absolute left-0 transform -translate-x-1/2"></div>
+<div class="w-2 h-2 bg-primary rounded-full absolute right-0 transform translate-x-1/2"></div>
+</div>
+<!-- Technical Crosshairs -->
+<div class="absolute inset-0 flex items-center justify-center opacity-30 pointer-events-none">
+<div class="w-full h-[1px] bg-white/40"></div>
+<div class="h-full w-[1px] bg-white/40 absolute"></div>
+</div>
+<div class="absolute bottom-6 right-6 font-label-mono text-label-mono text-outline">
+                            MAG 4.5X // CR-X1
+                        </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Specs / Bento Grid -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-lowest">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[400px]">
+<!-- Bento Card 1: Tachymeter (Spans 2 columns on desktop) -->
+<div class="md:col-span-2 glass-panel rounded-xl p-8 flex flex-col justify-between group overflow-hidden relative">
+<div class="absolute inset-0 z-0">
+<img alt="Tachymeter" class="w-full h-full object-cover object-center opacity-30 group-hover:opacity-40 transition-opacity duration-700 mix-blend-screen" data-alt="A striking macro shot focusing purely on the tachymeter bezel of a high-end luxury sports watch. The numbers and markings are deeply engraved and filled with a stark white against a matte black ceramic background. The lighting is sharp, creating dramatic shadows that emphasize the precise, technical nature of the timekeeping instrument." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2Srbv-wqp54q9Lb_w8KO_XPla-uMFxPaFQx-QFqsbhFaNC8xAJ3vt550n8lwTu25hAvv1NusBtP0hZ8n27UqSWKxWEh6lA5FzCER294L3-E1bQB-wQyn8MStxDUV4MNJANGz1CKuzOqGFegG_L790L1GLbKyAcdEfQQ5WCfaa5gGz7uU9z1rG4SE577rt5XpJgklEUC9tDMPgrBi_IerOwhZokHNQOnWqcq6bL7FItwiyxi3Xia11RB39ff_s9GcPtxdiOM0jbIIg"/>
+</div>
+<div class="relative z-10">
+<span class="material-symbols-outlined text-[32px] text-primary mb-4 block">speed</span>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Tachymeter Scale</h3>
+</div>
+<div class="relative z-10 max-w-sm">
+<p class="font-body-main text-body-main text-on-surface-variant">
+                            Engraved directly into the fixed carbon bezel, allowing for precise calculation of speed over a known distance. Essential for the track, designed for the wrist.
+                        </p>
+</div>
+</div>
+<!-- Bento Card 2: Water Resistance -->
+<div class="glass-panel rounded-xl p-8 flex flex-col justify-between group overflow-hidden relative">
+<div class="absolute inset-0 z-0 bg-gradient-to-t from-black/80 to-transparent">
+<img alt="Water" class="w-full h-full object-cover object-center opacity-20 group-hover:opacity-30 transition-opacity duration-700" data-alt="Abstract conceptual photography representing water resistance. High-speed capture of dark, viscous water splashing against a submerged, invisible surface in a pitch-black environment. The lighting catches only the crests of the water droplets, creating a stark, high-contrast, moody aesthetic consistent with a luxury technical product." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaAcbCqFHFRknUl12deHcA0VKolL09zU1sTFdn3b5_FldeSPSFYSkg5zjNIpThfV_UP2sqKdiqqesUrrgUWY1WnxwLtOC_JmvGRqBDY8uYRE5lL-FOOtq7yazui67p79r_8AWCUYIwVjzvjfUPFYByrfHGxQZBVBln_cWwg4usr6ri_1nmVT6kK7xitVaddvoJ6kHcDvEzxCcVC8JRnUlM6AYiNjKGDsoGchbdekSZpJiIczACzhoFxJj4Qyz0iDVff_Ejh_Xo6rDi"/>
+</div>
+<div class="relative z-10">
+<span class="material-symbols-outlined text-[32px] text-primary mb-4 block">water_drop</span>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">100m</h3>
+<span class="font-label-mono text-label-mono text-outline uppercase tracking-wider block mt-2">Water Resistance</span>
+</div>
+<div class="relative z-10 mt-8">
+<p class="font-body-main text-[14px] text-on-surface-variant">
+                            Screw-down crown with dual O-ring seals ensures integrity at depth.
+                        </p>
+</div>
+</div>
+<!-- Bento Card 3: Carbon Material -->
+<div class="md:col-span-3 glass-panel rounded-xl p-8 min-h-[300px] flex flex-col md:flex-row items-center gap-12 group overflow-hidden relative">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-surface-variant/20 via-surface-container-lowest to-surface-container-lowest opacity-50"></div>
+</div>
+<div class="md:w-1/3 relative z-10">
+<h3 class="font-headline-lg text-headline-lg text-primary mb-4">Forged Carbon</h3>
+<p class="font-body-main text-body-main text-on-surface-variant">
+                            Unlike woven carbon fiber, forged carbon utilizes chopped fibers compressed under immense pressure and heat. The result is a monolithic case structure that is uniquely patterned, lighter than titanium, and virtually indestructible.
+                        </p>
+</div>
+<div class="md:w-2/3 h-full relative z-10 overflow-hidden rounded-lg">
+<img alt="Forged Carbon Texture" class="w-full h-full object-cover object-center transform transition-transform duration-[2s] group-hover:scale-110" data-alt="Extreme macro photography of forged carbon material. The image showcases the random, marbled pattern of chopped carbon fibers embedded in dark resin. The texture is matte and tactile, illuminated by a sharp, cool light that creates deep shadows and highlights the complex, futuristic nature of the material against a black background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsxxSiQU-D6j5KlvTJXvu7dUKbh3RCGo1K81V556O81Pa1CFStqs9G2Jqu6HxsxVam7DBTqXdrDs-ZYUHZ0PcAoID9LgeRY1VVZhAG18521ZFHyPtfJR3dc6HfP-vR8kQCKc464xL-ahQVkKfhFSC1Q9VzAki2PNJ6A5fVRU1Kmh6JcEAHPDZwnncHJMfmUATbuF_6hu8VXsziLGE8fKnlkwoHxnuCwsuyc2XCWrPnNeU2FSyDbSb7EXmf-11Rmyn-8qudsQulIbma"/>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shared Component -->
+<footer class="w-full py-section-gap bg-surface-container-lowest text-on-surface font-label-mono text-label-mono font-headline-lg text-headline-lg text-white border-t border-white/5 shadow-none flex flex-col items-center justify-center space-y-8 px-margin-desktop relative z-20">
+<div class="font-headline-lg text-headline-lg text-white mb-8">
+            Timeless
+        </div>
+<div class="flex flex-wrap justify-center gap-8 mb-12">
+<a class="text-on-surface-variant hover:text-primary underline transition-all" href="#">Legal</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-all" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-all" href="#">Heritage</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-all" href="#">Sustainability</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-all" href="#">Contact</a>
+</div>
+<div class="text-on-surface-variant text-center opacity-50 text-[10px]">
+            © 2024 Timeless Horology. All Rights Reserved.
+        </div>
+<!-- Smooth scroll to top interaction hint -->
+<button class="mt-8 p-4 rounded-full border border-white/10 hover:bg-white/5 transition-colors group" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-white transition-colors">arrow_upward</span>
+</button>
+</footer>
+</body></html>

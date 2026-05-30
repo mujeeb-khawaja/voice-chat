@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Women's Fashion Collection - Timeless</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Geist:wght@300;400;500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-error": "#690005",
+                        "on-error-container": "#ffdad6",
+                        "surface-bright": "#393939",
+                        "surface": "#131313",
+                        "on-tertiary-container": "#656467",
+                        "on-secondary": "#2f3037",
+                        "outline-variant": "#444748",
+                        "surface-container-low": "#1b1b1b",
+                        "on-primary": "#2f3131",
+                        "on-tertiary": "#303033",
+                        "secondary-fixed-dim": "#c6c6cf",
+                        "on-background": "#e2e2e2",
+                        "tertiary-container": "#e4e1e5",
+                        "surface-container-high": "#2a2a2a",
+                        "on-secondary-container": "#b4b4bd",
+                        "primary-fixed": "#e2e2e2",
+                        "on-secondary-fixed-variant": "#45464e",
+                        "surface-tint": "#c6c6c7",
+                        "background": "#131313",
+                        "on-tertiary-fixed": "#1b1b1e",
+                        "error-container": "#93000a",
+                        "tertiary-fixed": "#e4e1e5",
+                        "primary-fixed-dim": "#c6c6c7",
+                        "on-primary-fixed-variant": "#454747",
+                        "inverse-surface": "#e2e2e2",
+                        "error": "#ffb4ab",
+                        "secondary-container": "#45464e",
+                        "on-surface-variant": "#c4c7c8",
+                        "surface-variant": "#353535",
+                        "surface-dim": "#131313",
+                        "on-primary-container": "#636565",
+                        "surface-container-highest": "#353535",
+                        "primary-container": "#e2e2e2",
+                        "tertiary": "#ffffff",
+                        "primary": "#ffffff",
+                        "inverse-on-surface": "#303030",
+                        "inverse-primary": "#5d5f5f",
+                        "on-surface": "#e2e2e2",
+                        "secondary-fixed": "#e2e1eb",
+                        "on-secondary-fixed": "#1a1b22",
+                        "secondary": "#c6c6cf",
+                        "outline": "#8e9192",
+                        "surface-container": "#1f1f1f",
+                        "on-tertiary-fixed-variant": "#47464a",
+                        "tertiary-fixed-dim": "#c8c6c9",
+                        "on-primary-fixed": "#1a1c1c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "24px",
+                        "gutter": "32px",
+                        "section-gap": "160px",
+                        "margin-desktop": "80px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "body-intro": ["Geist"],
+                        "body-main": ["Geist"],
+                        "label-mono": ["JetBrains Mono"],
+                        "headline-lg": ["Playfair Display"],
+                        "display-hero": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-intro": ["20px", { "lineHeight": "32px", "fontWeight": "300" }],
+                        "body-main": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-mono": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "fontWeight": "600" }],
+                        "display-hero": ["84px", { "lineHeight": "92px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #000000; /* Level 0 Void */
+            color: #e2e2e2;
+            overflow-x: hidden;
+        }
+        
+        /* Glassmorphism Utilities */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: -1px -1px 10px rgba(255, 255, 255, 0.05);
+            transform: translateY(-5px);
+        }
+
+        /* Voice Orb Animations */
+        @keyframes pulse-orb {
+            0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); transform: scale(1); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 255, 255, 0); transform: scale(1.05); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); transform: scale(1); }
+        }
+        
+        .voice-orb {
+            animation: pulse-orb 3s infinite ease-in-out;
+            background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.2) 60%, transparent 100%);
+        }
+
+        /* Smooth Scrolling */
+        html { scroll-behavior: smooth; }
+
+        /* Hide scrollbar for clean aesthetic but allow scrolling */
+        ::-webkit-scrollbar { width: 0px; background: transparent; }
+    </style>
+</head>
+<body class="antialiased font-body-main text-body-main selection:bg-white selection:text-black min-h-screen flex flex-col relative">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/8 backdrop-blur-[24px] border-b border-white/10 shadow-none transition-all duration-300" id="top-nav">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 w-full max-w-[1920px] mx-auto">
+<!-- Brand -->
+<a class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary tracking-tighter hover:opacity-80 transition-opacity" href="#">
+                Timeless
+            </a>
+<!-- Desktop Navigation Links (Hidden on Mobile) -->
+<div class="hidden md:flex space-x-gutter items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-mono text-label-mono" href="#">Men</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-mono text-label-mono" href="#">Women</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-mono text-label-mono" href="#">Kids</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-mono text-label-mono" href="#">Collections</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-mono text-label-mono" href="#">About</a>
+</div>
+<!-- Trailing Actions -->
+<div class="flex items-center space-x-4">
+<button aria-label="Voice Search" class="text-primary dark:text-tertiary hover:scale-95 transition-transform duration-300">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">settings_voice</span>
+</button>
+<!-- Mobile Menu Toggle (Visible only on mobile) -->
+<button aria-label="Open Menu" class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- SideNavBar (Voice Orb Concierge) - Hidden on mobile, fixed right on desktop -->
+<aside class="hidden xl:flex fixed right-0 h-screen w-24 z-40 bg-white/5 backdrop-blur-[20px] border-l border-white/10 shadow-2xl flex-col items-center justify-center space-y-8 py-8 transition-transform">
+<!-- Top area spacing -->
+<div class="flex-grow flex flex-col justify-start pt-24 space-y-8">
+<button aria-label="Concierge" class="text-on-surface-variant p-4 hover:bg-white/10 transition-all rounded-full group relative">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">graphic_eq</span>
+</button>
+<button aria-label="Portfolio" class="text-on-surface-variant p-4 hover:bg-white/10 transition-all rounded-full group relative">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">watch</span>
+</button>
+</div>
+<!-- The Orb -->
+<div class="relative flex flex-col items-center justify-center cursor-pointer group">
+<div class="w-12 h-12 rounded-full voice-orb flex items-center justify-center mb-2 z-10 bg-white/20 backdrop-blur-md border border-white/30">
+<span class="material-symbols-outlined text-white text-[20px]">mic</span>
+</div>
+<div class="absolute inset-0 bg-white/5 rounded-full blur-xl group-hover:bg-white/10 transition-all"></div>
+<span class="font-label-mono text-[10px] text-tertiary opacity-70 group-hover:opacity-100 transition-opacity whitespace-nowrap">Speak Now</span>
+</div>
+<!-- Bottom area spacing -->
+<div class="flex-grow flex flex-col justify-end pb-8 space-y-8">
+<button aria-label="Heritage" class="text-on-surface-variant p-4 hover:bg-white/10 transition-all rounded-full group relative">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">history</span>
+</button>
+<button aria-label="Assistance" class="text-on-surface-variant p-4 hover:bg-white/10 transition-all rounded-full group relative">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">support_agent</span>
+</button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-32 pb-section-gap px-margin-mobile md:px-margin-desktop xl:pr-[calc(80px+6rem)] max-w-[1920px] mx-auto w-full">
+<!-- Hero Section -->
+<section class="relative h-[716px] min-h-[600px] w-full mb-section-gap rounded-2xl overflow-hidden glass-card group">
+<div class="absolute inset-0 w-full h-full">
+<img alt="Women's Fashion Hero" class="w-full h-full object-cover object-center transform scale-100 group-hover:scale-105 transition-transform duration-1000 ease-out opacity-80 mix-blend-luminosity" data-alt="A striking, high-fashion editorial photograph of a female model wearing avant-garde monochromatic clothing, predominantly crisp whites and deep blacks. She is positioned against a minimalist, slightly textured dark studio background that emphasizes the sleek, modern glassmorphic UI aesthetic. The lighting is dramatic and cinematic, casting sharp shadows while highlighting the intricate textures of the fabric, creating a mood of quiet confidence and exclusivity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuATZWoK4uMjlHzrPkBlbjTGqAKGYUOxqBJ3Jd39qXer5YgXSmAqceAROz95AOudWvUUgzlfqkd-SGo3-02iyDmkp8kybjjm48Lmbxar5jVmIDDbZql0p_GmVLtdSu2xprygZ6gX5eUKDvjVtQ1KLjjG9mSKVtrg5Y8H9kxDTLqUH8yv6-yvaSe4o1gw9Ifn0NLuJdYekphtKOnjZTeTR9ile6erKH-rmloyyNZfryXi-ScsKZlgRSU7nO31W9Gj98ROzOpb6mDGXAMJ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+</div>
+<div class="absolute bottom-0 left-0 p-8 md:p-16 w-full md:w-2/3 z-10">
+<h1 class="font-display-hero text-display-hero text-white mb-6 leading-tight">Women's<br/>Collection</h1>
+<p class="font-body-intro text-body-intro text-on-surface-variant max-w-xl mb-8">
+                    Discover the intersection of avant-garde design and timeless elegance. Curated pieces for the modern visionary.
+                </p>
+<button class="px-8 py-4 border border-white/30 rounded-full font-label-mono text-label-mono text-white hover:bg-white hover:text-black transition-all duration-300 uppercase tracking-widest bg-white/5 backdrop-blur-sm">
+                    Explore Now
+                </button>
+</div>
+</section>
+<!-- Bento Grid Layout for Sub-Collections -->
+<section class="mb-section-gap">
+<div class="flex justify-between items-end mb-12">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-white">Curated Aesthetics</h2>
+<div class="hidden md:flex space-x-4">
+<button class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<button class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 auto-rows-[400px]">
+<!-- Luna White (Spans 8 cols) -->
+<a class="col-span-1 md:col-span-8 glass-card rounded-2xl overflow-hidden relative group block" href="#">
+<div class="absolute inset-0 z-0">
+<img alt="Luna White Collection" class="w-full h-full object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-700" data-alt="A minimalist editorial fashion shot featuring a model draped in flowing, ethereal white garments. The setting is an ultra-modern, pristine architectural space flooded with soft, high-key natural light. The aesthetic perfectly aligns with a sleek, futuristic glassmorphic UI, utilizing varying shades of white and soft greys against a completely desaturated, nearly invisible background. The mood is serene, pure, and luxurious." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfUoonrybkIONdIId3l3q9S_pKr21YXknf8qvqNPmGE4pJbUOXRLjoNZt9FU8pKZGaRXM-jaCDX9Kh9YFDjrrJrnIr7I8K8l11-g2ChZKW3m0KyuN04jkaau3DsNyBB2s-wgaNtgz8KQcRfL8d4z_FkPZwXRD0lM1izQ-bqri10PGrd3Cb5IoE20WuPcppmUAe9VZ9olMYo_u2VA20afwaqaBXLUT5f2VKvNPLd15Nl0SEDkBp78W-U0Jxm3R13_PpZSIEncSDMH6O"/>
+<div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+</div>
+<div class="relative z-10 h-full flex flex-col justify-end p-8 md:p-12">
+<div class="inline-block px-3 py-1 border border-white/20 rounded-full font-label-mono text-label-mono text-white/70 mb-4 w-max backdrop-blur-md bg-black/20">01 / LUNA WHITE</div>
+<h3 class="font-headline-lg text-[32px] md:text-[40px] text-white mb-2">Ethereal Purity</h3>
+<p class="font-body-main text-on-surface-variant max-w-md">Embrace the lightness of being with our completely desaturated, structurally complex white capsule.</p>
+</div>
+</a>
+<!-- Noir Chic (Spans 4 cols) -->
+<a class="col-span-1 md:col-span-4 glass-card rounded-2xl overflow-hidden relative group block" href="#">
+<div class="absolute inset-0 z-0">
+<img alt="Noir Chic Collection" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700 mix-blend-luminosity" data-alt="A close-up, dramatic fashion photograph focusing on the intense textures of a matte black leather jacket and a perfectly tailored black silk blouse. The lighting is moody and low-key, with a single sharp rim light outlining the model's silhouette against an abyssal black background. The visual style is edgy, exclusive, and tactile, fitting seamlessly into a high-end, dark-mode luxury interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBglGNEuypkluIbXk5hX-ff6GDkDfNO8he0mCWuopL4BS3uPppdxGIrxumtdrEe6Nt5YxzbT6yEZ4JiC68uULS7v2P7gBsatn_takqk4cRlOSazOultodLVdlpEi0AYmxdVO7Edk1J4IbjICNy06KM-34AMPtlpT37cJZPq7J4QAGzlkXLigs10gDW5IG47fZ_B7tXiJ6ce4Nc5ntaXXw1fihKD3JLu_VDnROkedQalY6YWb0kCcF_SjFtJAGel18J6iGvytasbGoah"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+</div>
+<div class="relative z-10 h-full flex flex-col justify-end p-8">
+<div class="inline-block px-3 py-1 border border-white/20 rounded-full font-label-mono text-label-mono text-white/70 mb-4 w-max backdrop-blur-md bg-black/20">02 / NOIR CHIC</div>
+<h3 class="font-headline-lg text-[28px] text-white mb-2">Abyssal Depth</h3>
+<p class="font-body-main text-on-surface-variant text-sm">Mastery in darkness. Textural contrasts in pure black.</p>
+</div>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap bg-surface-container-lowest border-t border-white/5 relative z-10">
+<div class="max-w-[1920px] mx-auto flex flex-col items-center justify-center space-y-8 px-margin-mobile md:px-margin-desktop">
+<a class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-white hover:opacity-80 transition-opacity" href="#">
+                Timeless
+            </a>
+<div class="flex flex-wrap justify-center gap-6 md:gap-8">
+<a class="text-on-surface-variant font-label-mono text-label-mono hover:text-primary hover:underline transition-all uppercase" href="#">Legal</a>
+<a class="text-on-surface-variant font-label-mono text-label-mono hover:text-primary hover:underline transition-all uppercase" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant font-label-mono text-label-mono hover:text-primary hover:underline transition-all uppercase" href="#">Heritage</a>
+<a class="text-on-surface-variant font-label-mono text-label-mono hover:text-primary hover:underline transition-all uppercase" href="#">Sustainability</a>
+<a class="text-on-surface-variant font-label-mono text-label-mono hover:text-primary hover:underline transition-all uppercase" href="#">Contact</a>
+</div>
+<div class="text-on-surface-variant font-label-mono text-label-mono opacity-50 text-center mt-12">
+                © 2024 Timeless Horology. All Rights Reserved.
+            </div>
+</div>
+</footer>
+<script>
+        // Simple scroll effect for top nav background
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('top-nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-white/10', 'backdrop-blur-[24px]');
+                nav.classList.remove('bg-transparent');
+            } else {
+                nav.classList.remove('bg-white/10', 'backdrop-blur-[24px]');
+                nav.classList.add('bg-transparent');
+            }
+        });
+    </script>
+</body></html>

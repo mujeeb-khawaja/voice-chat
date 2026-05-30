@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Executive Black - Timeless Horology</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Geist:wght@300;400&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-error": "#690005",
+                        "on-error-container": "#ffdad6",
+                        "surface-bright": "#393939",
+                        "surface": "#131313",
+                        "on-tertiary-container": "#656467",
+                        "on-secondary": "#2f3037",
+                        "outline-variant": "#444748",
+                        "surface-container-low": "#1b1b1b",
+                        "on-primary": "#2f3131",
+                        "on-tertiary": "#303033",
+                        "secondary-fixed-dim": "#c6c6cf",
+                        "on-background": "#e2e2e2",
+                        "tertiary-container": "#e4e1e5",
+                        "surface-container-high": "#2a2a2a",
+                        "on-secondary-container": "#b4b4bd",
+                        "primary-fixed": "#e2e2e2",
+                        "on-secondary-fixed-variant": "#45464e",
+                        "surface-tint": "#c6c6c7",
+                        "background": "#131313",
+                        "on-tertiary-fixed": "#1b1b1e",
+                        "error-container": "#93000a",
+                        "tertiary-fixed": "#e4e1e5",
+                        "primary-fixed-dim": "#c6c6c7",
+                        "on-primary-fixed-variant": "#454747",
+                        "inverse-surface": "#e2e2e2",
+                        "error": "#ffb4ab",
+                        "secondary-container": "#45464e",
+                        "on-surface-variant": "#c4c7c8",
+                        "surface-variant": "#353535",
+                        "surface-dim": "#131313",
+                        "on-primary-container": "#636565",
+                        "surface-container-highest": "#353535",
+                        "primary-container": "#e2e2e2",
+                        "tertiary": "#ffffff",
+                        "primary": "#ffffff",
+                        "inverse-on-surface": "#303030",
+                        "inverse-primary": "#5d5f5f",
+                        "on-surface": "#e2e2e2",
+                        "secondary-fixed": "#e2e1eb",
+                        "on-secondary-fixed": "#1a1b22",
+                        "secondary": "#c6c6cf",
+                        "outline": "#8e9192",
+                        "surface-container": "#1f1f1f",
+                        "on-tertiary-fixed-variant": "#47464a",
+                        "tertiary-fixed-dim": "#c8c6c9",
+                        "on-primary-fixed": "#1a1c1c"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "margin-mobile": "24px",
+                        "gutter": "32px",
+                        "section-gap": "160px",
+                        "margin-desktop": "80px"
+                    },
+                    fontFamily: {
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "body-intro": ["Geist"],
+                        "body-main": ["Geist"],
+                        "label-mono": ["JetBrains Mono"],
+                        "headline-lg": ["Playfair Display"],
+                        "display-hero": ["Playfair Display"]
+                    },
+                    fontSize: {
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "body-intro": ["20px", {"lineHeight": "32px", "fontWeight": "300"}],
+                        "body-main": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-mono": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "600"}],
+                        "display-hero": ["84px", {"lineHeight": "92px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #000000; /* Level 0: The Void */
+        }
+        .glass-panel {
+            background-color: rgba(255, 255, 255, 0.08); /* Level 1 */
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-active {
+            background-color: rgba(255, 255, 255, 0.15); /* Level 2 */
+            box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Subtle Parallax & Float */
+        .watch-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Voice Orb Pulse */
+        .orb-pulse {
+            animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.3); }
+            70% { transform: scale(1); box-shadow: 0 0 0 20px rgba(255, 255, 255, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body class="text-on-surface font-body-main antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/8 backdrop-blur-[24px] border-b border-white/10 shadow-none flex justify-between items-center px-margin-desktop py-6 transition-all duration-300" id="topNav">
+<div class="font-headline-lg text-headline-lg text-primary tracking-tighter">Timeless</div>
+<div class="hidden md:flex space-x-gutter">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-mono text-label-mono" href="#">Men</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-mono text-label-mono" href="#">Women</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-mono text-label-mono" href="#">Kids</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 transition-colors duration-300 font-label-mono text-label-mono" href="#">Collections</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-mono text-label-mono" href="#">About</a>
+</div>
+<div class="flex items-center">
+<button class="text-primary hover:text-primary transition-colors duration-300 ml-4 hover:scale-95 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">settings_voice</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Area - Full Screen Split -->
+<main class="min-h-screen flex flex-col md:flex-row pt-[104px]">
+<!-- Left Side: Immersive Imagery -->
+<section class="w-full md:w-1/2 relative flex items-center justify-center p-8 overflow-hidden bg-surface-container-lowest">
+<!-- Subtle background radial gradient for depth -->
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.05)_0%,transparent_70%)] pointer-events-none"></div>
+<div class="relative w-full max-w-2xl aspect-square group cursor-crosshair">
+<img alt="Executive Black Watch" class="w-full h-full object-contain watch-float transition-transform duration-700 ease-out group-hover:scale-[1.05] relative z-10" data-alt="A highly detailed, macro photograph of a luxury mechanical watch featuring a stark black dial and polished silver casing. The lighting is dramatic and cinematic, highlighting the reflective sapphire crystal and intricate metallic textures. The background is a pure, infinite black space, emphasizing the watch's sophisticated, modern aesthetic. The mood is exclusive, precise, and technologically advanced, fitting a high-end dark mode UI." id="productImage" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDv6bSUSBZQ_m8OCM8n63arzOppLlcjQP81h3Pg358b6XNcuaczFV-QLz-QFNwlRa-gYtXeZqYHGDmZlcGRpBp1Hjq6U_voa9-SU7U4hLqApFRhDqVWjMCzvnn9tjkzvrQIcf-4JR_wY8ApJmZpAIVsWFJkmF1lC7Dy9nd80wArJ0cNE7i-2WAPVVh0RY1cwwawifOBKG9ml5gpFAaHGeC-nwLN6FOavLtOZFrmcHCHve5C4M0tnLqRDTCPhH1X6_IpYk1ADBTie4iz"/>
+</div>
+</section>
+<!-- Right Side: Details & AI -->
+<section class="w-full md:w-1/2 flex flex-col p-8 md:p-margin-desktop overflow-y-auto pb-32">
+<div class="max-w-xl mx-auto md:ml-0 md:mr-auto w-full space-y-12">
+<!-- Product Header -->
+<div class="space-y-4">
+<p class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-widest">Heritage Collection</p>
+<h1 class="font-display-hero text-display-hero text-primary">Executive Black</h1>
+<p class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface-variant">$14,500</p>
+</div>
+<!-- Description -->
+<div class="space-y-6">
+<p class="font-body-intro text-body-intro text-on-surface">
+                        A masterful fusion of understated elegance and horological precision. The Executive Black is forged from grade 5 titanium, offering unparalleled strength with a weightless feel on the wrist.
+                    </p>
+</div>
+<!-- Specs Bento Grid -->
+<div class="grid grid-cols-2 gap-4">
+<div class="glass-panel p-6 rounded-xl flex flex-col space-y-2">
+<span class="material-symbols-outlined text-outline" style="font-variation-settings: 'FILL' 0;">autorenew</span>
+<p class="font-label-mono text-label-mono text-on-surface-variant">Movement</p>
+<p class="font-body-main text-body-main text-primary">Automatic Calibre 4</p>
+</div>
+<div class="glass-panel p-6 rounded-xl flex flex-col space-y-2">
+<span class="material-symbols-outlined text-outline" style="font-variation-settings: 'FILL' 0;">diamond</span>
+<p class="font-label-mono text-label-mono text-on-surface-variant">Crystal</p>
+<p class="font-body-main text-body-main text-primary">Sapphire</p>
+</div>
+<div class="glass-panel p-6 rounded-xl flex flex-col space-y-2">
+<span class="material-symbols-outlined text-outline" style="font-variation-settings: 'FILL' 0;">straighten</span>
+<p class="font-label-mono text-label-mono text-on-surface-variant">Diameter</p>
+<p class="font-body-main text-body-main text-primary">42mm</p>
+</div>
+<div class="glass-panel p-6 rounded-xl flex flex-col space-y-2">
+<span class="material-symbols-outlined text-outline" style="font-variation-settings: 'FILL' 0;">water_drop</span>
+<p class="font-label-mono text-label-mono text-on-surface-variant">Water Resistance</p>
+<p class="font-body-main text-body-main text-primary">100m</p>
+</div>
+</div>
+<!-- AI Concierge Panel -->
+<div class="glass-panel p-8 rounded-xl relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="flex items-start space-x-6 relative z-10">
+<div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center orb-pulse flex-shrink-0">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">graphic_eq</span>
+</div>
+<div class="space-y-3">
+<p class="font-label-mono text-label-mono text-primary flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary inline-block animate-pulse"></span>
+                                Live Concierge
+                            </p>
+<p class="font-body-main text-body-main text-on-surface-variant italic">
+                                "The 42mm case profile of the Executive Black sits exceptionally well on medium to large wrists. Would you like to hear about the bespoke strap options for this model?"
+                            </p>
+</div>
+</div>
+</div>
+<!-- CTAs -->
+<div class="flex flex-col sm:flex-row gap-6 pt-8 border-t border-white/10">
+<button class="flex-1 border border-white/20 bg-transparent text-primary hover:bg-white/10 hover:text-white font-label-mono text-label-mono py-4 px-8 rounded-full transition-all duration-300 flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 0;">mic</span>
+                        Reserve via Voice
+                    </button>
+<button class="flex-1 bg-primary text-surface-container-lowest hover:bg-white hover:scale-[0.98] font-label-mono text-label-mono py-4 px-8 rounded-full transition-all duration-300 flex justify-center items-center gap-2">
+                        Add to Bag
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<script>
+        // Simple zoom effect on image hover
+        const productImage = document.getElementById('productImage');
+        const imageContainer = productImage.parentElement;
+
+        imageContainer.addEventListener('mousemove', (e) => {
+            const { left, top, width, height } = imageContainer.getBoundingClientRect();
+            const x = (e.clientX - left) / width;
+            const y = (e.clientY - top) / height;
+            
+            productImage.style.transform = `scale(1.1) translate(${(0.5 - x) * 20}px, ${(0.5 - y) * 20}px)`;
+        });
+
+        imageContainer.addEventListener('mouseleave', () => {
+            productImage.style.transform = 'scale(1) translate(0, 0)';
+        });
+
+        // TopNav scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('topNav');
+            if (window.scrollY > 50) {
+                nav.classList.add('glass-active');
+            } else {
+                nav.classList.remove('glass-active');
+            }
+        });
+    </script>
+</body></html>
