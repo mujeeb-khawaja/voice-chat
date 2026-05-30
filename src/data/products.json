@@ -530,7 +530,20 @@
       "currency": "USD",
       "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDRy5fZHc2RQHYEWj9Qm89cbuN0VKQyuBR2eDrkBcplzJs-a3OkGURAkBKfpbs0DGBf4qkGbNHPFE0n0sfQjo3Eb2ZThNIW_EZpA36MbfVbTzxyNcSeNfcV-bruMzGA8DtZR--LTNKLOlttObs-EMuz7g0qYuVCrXg-FMkTH4S-D_B_osyT2fZL6BbaQG737sKvfLIdntj2RfShRh95_RCPffXofCTCnFP9sBoTz5NTpoNJ5fEMUEI6DtvMxtYJlUmY2DyyC_jIntK2",
       "cardImage": "https://lh3.googleusercontent.com/aida-public/AB6AXuCiA3N1_rlNQy4YRr_19GCMQhwx2zJ6Q30xwxC-jdbyXM_WBmIxFHY31CyC1UTTXNp7cDrnrsmRd9_5wnFn2rk7lUw6Kb124yfxANrHdLhjXFNw4mzobY9dIBmwozztaZoNX1Xc5rsu4uwCq2xX5yTki81N5TmMHpD2G6RmsOjVNM2vtIIvqug2Dog59uFpMNfA_DsKiqB492c3toq5DHC1Tm1YPrD8D3KkxN6JOnTVlSVRoh3n2NgKYo64MW2lvSQ41VaJOzoE6Nhy",
-      "gallery": [],
+      "gallery": [
+        "https://lh3.googleusercontent.com/aida-public/AB6AXuCPYedF1eVYSIfTbp1bB4IA_RLIlgHNAZUmb6gC0Ae0udFtxhi8qL-YMFGJlKr2Bq8T2qGI_14_4WKTatYJDi09WkQfEylKTHKWg--O3_Fwus9xmMojbeP_5Xy3FTrXJ_WpFLieTa1MGFe5SCIxh-NaZPuH0-wvMvEAkz8rL5hCd_PMG5iHUa_4X70n2cmm6T_Ga9WGSBGMrAU654leFWNml_s5U-lvKefuSR7Wsml4RodqvvOVF9odicW73zbyNZLk6Tn-v3m89ASJ",
+        "https://lh3.googleusercontent.com/aida-public/AB6AXuC2Srbv-wqp54q9Lb_w8KO_XPla-uMFxPaFQx-QFqsbhFaNC8xAJ3vt550n8lwTu25hAvv1NusBtP0hZ8n27UqSWKxWEh6lA5FzCER294L3-E1bQB-wQyn8MStxDUV4MNJANGz1CKuzOqGFegG_L790L1GLbKyAcdEfQQ5WCfaa5gGz7uU9z1rG4SE577rt5XpJgklEUC9tDMPgrBi_IerOwhZokHNQOnWqcq6bL7FItwiyxi3Xia11RB39ff_s9GcPtxdiOM0jbIIg",
+        "https://lh3.googleusercontent.com/aida-public/AB6AXuBaAcbCqFHFRknUl12deHcA0VKolL09zU1sTFdn3b5_FldeSPSFYSkg5zjNIpThfV_UP2sqKdiqqesUrrgUWY1WnxwLtOC_JmvGRqBDY8uYRE5lL-FOOtq7yazui67p79r_8AWCUYIwVjzvjfUPFYByrfHGxQZBVBln_cWwg4usr6ri_1nmVT6kK7xitVaddvoJ6kHcDvEzxCcVC8JRnUlM6AYiNjKGDsoGchbdekSZpJiIczACzhoFxJj4Qyz0iDVff_Ejh_Xo6rDi",
+        "https://lh3.googleusercontent.com/aida-public/AB6AXuBsxxSiQU-D6j5KlvTJXvu7dUKbh3RCGo1K81V556O81Pa1CFStqs9G2Jqu6HxsxVam7DBTqXdrDs-ZYUHZ0PcAoID9LgeRY1VVZhAG18521ZFHyPtfJR3dc6HfP-vR8kQCKc464xL-ahQVkKfhFSC1Q9VzAki2PNJ6A5fVRU1Kmh6JcEAHPDZwnncHJMfmUATbuF_6hu8VXsziLGE8fKnlkwoHxnuCwsuyc2XCWrPnNeU2FSyDbSb7EXmf-11Rmyn-8qudsQulIbma"
+      ],
+      "movementDescription": "Visible through the sapphire crystal case back, the skeletonized movement reveals the beating heart of the racer. A column-wheel chronograph mechanism meticulously hand-finished with anglage and black DLC coating.",
+      "movementComponents": ["Escapement", "Mainspring Barrel", "Column Wheel"],
+      "details": {
+        "tachymeterTitle": "Tachymeter Scale",
+        "tachymeterDescription": "Engraved directly into the fixed carbon bezel, allowing for precise calculation of speed over a known distance. Essential for the track, designed for the wrist.",
+        "waterResistanceDescription": "Screw-down crown with dual O-ring seals ensures integrity at depth.",
+        "materialDescription": "Unlike woven carbon fiber, forged carbon utilizes chopped fibers compressed under immense pressure and heat. The result is a monolithic case structure that is uniquely patterned, lighter than titanium, and virtually indestructible."
+      },
       "features": [
         "Forged carbon fibre monobloc case",
         "Calibre CR-X1 column-wheel chronograph",

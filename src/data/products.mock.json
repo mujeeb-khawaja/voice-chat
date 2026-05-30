@@ -1,0 +1,50 @@
+{
+  "products": [
+    {
+      "id": "example-001",
+      "slug": "example-slug",
+      "viewSlug": "nearest-existing-route",
+      "isOrbMatch": true,
+      "title": "Product Title",
+      "category": "mens",
+      "subcategory": "classic",
+      "collection": "Collection Name",
+      "description": "Long-form product description shown on detail pages.",
+      "shortDescription": "Short one-liner for collection grid cards.",
+      "price": 14500,
+      "currency": "USD",
+      "image": "https://...",
+      "cardImage": "https://...",
+      "gallery": ["https://..."],
+      "features": [
+        "Feature one",
+        "Feature two"
+      ],
+      "specifications": {
+        "movement": "Automatic Calibre 4",
+        "crystal": "Sapphire",
+        "diameter": "42mm",
+        "waterResistance": "100m",
+        "material": "Grade 5 Titanium",
+        "caseback": "Exhibition",
+        "crown": "Screw-down",
+        "weight": "85g",
+        "powerReserve": "72h",
+        "thickness": "9.8mm"
+      },
+      "availability": "In Stock",
+      "stockStatus": "Available",
+      "deliveryDays": "2–5 business days",
+      "expressDeliveryDays": "1–2 business days",
+      "estimatedDelivery": "Arrives in 2–5 business days",
+      "paymentMethods": ["visa", "mastercard", "amex", "apple-pay", "google-pay", "cash-on-delivery"],
+      "warranty": "2-year international warranty",
+      "rating": 4.8,
+      "reviewCount": 127,
+      "featured": true,
+      "tags": ["tag1", "tag2"],
+      "searchKeywords": ["keyword one", "keyword two"],
+      "semanticDescription": "Natural language description for future Qdrant vector indexing."
+    }
+  ]
+}

@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
+import { useNavigate, Routes, Route } from 'react-router-dom';
 import { getGeminiResponse } from '../utils/aiSpeechResponse';
 import { speakText, stopSpeaking } from '../utils/speaker';
-
+import { getFeaturedProducts, formatPrice } from '../lib/products';
 import AiConcierge1 from '../pages/AiConcierge1';
 import ExecutiveBlack from '../pages/ExecutiveBlack';
 import RoseGold from '../pages/RoseGold';
@@ -14,8 +15,15 @@ import WomensHub from '../pages/WomensHub';
 import WomensElegant from '../pages/WomensElegant';
 import WomensFashion from '../pages/WomensFashion';
 
+const suggestedProducts = getFeaturedProducts(2);
+
 export default function VoiceChatbot() {
-  const [view, setView] = useState('home');
+  const navigate = useNavigate();
+  const navigateTo = (route) => {
+    navigate(route === 'home' ? '/' : `/${route}`);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const [isActive, setIsActive] = useState(false);
   const [visualState, setVisualState] = useState('idle');
 
@@ -169,8 +177,7 @@ export default function VoiceChatbot() {
     getGeminiResponse(text).then(res => {
       if (res.themeChange) { /* theme changes ignored in template UI */ }
       if (res.routeChange) {
-        setView(res.routeChange);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        navigateTo(res.routeChange);
       }
       speakText(res.text, {
         onStart: () => setVisualState('speaking'),
@@ -253,23 +260,8 @@ export default function VoiceChatbot() {
     return 'Online';
   };
 
-  // ── Page Router ─────────────────────────────────────────
-  const renderPage = () => {
-    const props = { setView: (v) => { setView(v); window.scrollTo({ top: 0, behavior: 'smooth' }); }, openConcierge };
-    switch (view) {
-      case 'executive-black': return <ExecutiveBlack {...props} />;
-      case 'rose-gold':       return <RoseGold {...props} />;
-      case 'carbon-racer':   return <CarbonRacer {...props} />;
-      case 'mens-hub':       return <MensHub {...props} />;
-      case 'mens-classic':   return <MensClassic {...props} />;
-      case 'mens-sports':    return <MensSports {...props} />;
-      case 'noir-chic':      return <NoirChic {...props} />;
-      case 'womens-hub':     return <WomensHub {...props} />;
-      case 'womens-elegant': return <WomensElegant {...props} />;
-      case 'womens-fashion': return <WomensFashion {...props} />;
-      default:               return <AiConcierge1 {...props} />;
-    }
-  };
+  // ── Shared page props ───────────────────────────────────
+  const pageProps = { setView: navigateTo, openConcierge };
 
   // Orb core CSS class based on state
   const orbClass = `orb-core w-16 h-16 rounded-full z-10 cursor-pointer${isActive ? ` ${visualState}` : ''}`;
@@ -283,7 +275,7 @@ export default function VoiceChatbot() {
         className={`fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-7xl rounded-full flex justify-between items-center px-8 py-4 z-50 border border-transparent transition-all duration-400 ${navScrolled ? 'scrolled' : 'nav-top'}`}
       >
         <button
-          onClick={() => { setView('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+          onClick={() => navigateTo('home')}
           className="font-display-hero text-2xl tracking-tighter text-on-surface cursor-pointer"
         >
           Timeless
@@ -293,7 +285,7 @@ export default function VoiceChatbot() {
           {[['mens-hub','Men'],['womens-hub','Women'],['mens-sports','Sports'],['womens-fashion','Fashion']].map(([route, label]) => (
             <button
               key={route}
-              onClick={() => { setView(route); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+              onClick={() => navigateTo(route)}
               className="text-on-surface-variant hover:text-primary transition-colors font-body-main text-sm uppercase tracking-widest bg-transparent border-0 cursor-pointer"
             >
               {label}
@@ -317,7 +309,20 @@ export default function VoiceChatbot() {
 
       {/* ── Main Content ── */}
       <main>
-        {renderPage()}
+        <Routes>
+          <Route path="/"                element={<AiConcierge1  {...pageProps} />} />
+          <Route path="/executive-black" element={<ExecutiveBlack {...pageProps} />} />
+          <Route path="/rose-gold"       element={<RoseGold       {...pageProps} />} />
+          <Route path="/carbon-racer"    element={<CarbonRacer    {...pageProps} />} />
+          <Route path="/mens-hub"        element={<MensHub        {...pageProps} />} />
+          <Route path="/mens-classic"    element={<MensClassic    {...pageProps} />} />
+          <Route path="/mens-sports"     element={<MensSports     {...pageProps} />} />
+          <Route path="/noir-chic"       element={<NoirChic       {...pageProps} />} />
+          <Route path="/womens-hub"      element={<WomensHub      {...pageProps} />} />
+          <Route path="/womens-elegant"  element={<WomensElegant  {...pageProps} />} />
+          <Route path="/womens-fashion"  element={<WomensFashion  {...pageProps} />} />
+          <Route path="*"               element={<AiConcierge1   {...pageProps} />} />
+        </Routes>
       </main>
 
       {/* ── Floating AI tab — visible when drawer is closed ── */}
@@ -392,23 +397,21 @@ export default function VoiceChatbot() {
             <h4 className="font-label-mono text-[10px] uppercase tracking-widest text-on-surface-variant mb-4 pl-2 border-l border-white/20">
               Suggested for you
             </h4>
-            {[
-              { route: 'executive-black', label: 'Executive Black', price: '$4,200', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAAYPwnppsv8M-YXArhs95HOL6cuPxSow05OABzf3kftSzsr0A8yxb1gOsQfHP7vttd9LRlco2aPafrQ5SmadSL8jQi1ydaFhVAzd79aIolhRi0VeiP1rmDfMO6vJ49B8FE5xunV0FDP2GsdFoyuhJl5UKfY3f_w0IK2WMzOTCQIOqHzdoYGNjUzy98achMJWCrRipYP7yUlAzUQM1GxA5wB0igr-E_SLbcCcxLNqmHEgRixzMrExqs7q6gPMSW1Wny7xBoZldu7Bp4' },
-              { route: 'rose-gold', label: 'Diamond Grace', price: '$6,800', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBgkZ41ezaHUgJjoPfT1sjG5c8m31JMoDdEGOCR4TMCUzGxeV_3W1JltFEVncYI5JS5W7eynrrmvSief1rt5S4RylGaZ8R9GlZGFU0O1eUT0HbdvCrl9t6gy84lG1TrOmSLfy-5dCBjUrMkeFi2sxNuh0oYcFtAZ2hJXc9oMNGAQDQDBXs4Ne4oWjneJsl4uJ0zKrGwzKMHoV2_srfu-nGFVTG2q6m3abQPlk3in1q-n8okWJjcnTzKYAKed8i5yHUK1cmdNZloHVtM' },
-            ].map(({ route, label, price, img }) => (
-              <div
-                key={route}
-                onClick={() => { setView(route); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-                className="glass-card p-3 rounded-xl flex gap-4 items-center cursor-pointer group"
+            {suggestedProducts.map((product) => (
+              <button
+                key={product.slug}
+                type="button"
+                onClick={() => navigateTo(product.viewSlug)}
+                className="glass-card p-3 rounded-xl flex gap-4 items-center cursor-pointer group w-full text-left"
               >
                 <div className="w-12 h-12 rounded-lg bg-white/5 overflow-hidden shrink-0">
-                  <img src={img} alt={label} className="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-500" />
+                  <img src={product.cardImage || product.image} alt={product.title} className="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-500" />
                 </div>
                 <div>
-                  <h5 className="font-body-main text-sm font-medium text-primary">{label}</h5>
-                  <p className="font-label-mono text-[10px] text-on-surface-variant">{price}</p>
+                  <h5 className="font-body-main text-sm font-medium text-primary">{product.title}</h5>
+                  <p className="font-label-mono text-[10px] text-on-surface-variant">{formatPrice(product.price, product.currency)}</p>
                 </div>
-              </div>
+              </button>
             ))}
           </div>
 
@@ -419,10 +422,10 @@ export default function VoiceChatbot() {
           <button onClick={handleOrbClick} title="Assistant" className={`p-2 rounded-lg transition-all border-0 cursor-pointer ${isActive ? 'text-primary bg-white/10' : 'text-on-surface-variant hover:text-primary hover:bg-white/5 bg-transparent'}`}>
             <span className="material-symbols-outlined text-[20px]">graphic_eq</span>
           </button>
-          <button onClick={() => { setView('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} title="History" className="text-on-surface-variant hover:text-primary hover:bg-white/5 p-2 rounded-lg transition-all bg-transparent border-0 cursor-pointer">
+          <button onClick={() => navigateTo('home')} title="History" className="text-on-surface-variant hover:text-primary hover:bg-white/5 p-2 rounded-lg transition-all bg-transparent border-0 cursor-pointer">
             <span className="material-symbols-outlined text-[20px]">history</span>
           </button>
-          <button onClick={() => { setView('womens-elegant'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} title="Wishlist" className="text-on-surface-variant hover:text-primary hover:bg-white/5 p-2 rounded-lg transition-all bg-transparent border-0 cursor-pointer">
+          <button onClick={() => navigateTo('womens-elegant')} title="Wishlist" className="text-on-surface-variant hover:text-primary hover:bg-white/5 p-2 rounded-lg transition-all bg-transparent border-0 cursor-pointer">
             <span className="material-symbols-outlined text-[20px]">favorite</span>
           </button>
           <button onClick={() => setApiError(null)} title="Settings" className="text-on-surface-variant hover:text-primary hover:bg-white/5 p-2 rounded-lg transition-all bg-transparent border-0 cursor-pointer">
